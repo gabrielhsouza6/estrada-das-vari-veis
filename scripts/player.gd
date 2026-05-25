@@ -5,14 +5,6 @@ extends CharacterBody2D
 const SPEED = 80.0
 const JUMP_VELOCITY = -400.0
 
-func _ready():
-	print("Anim node:", anim)
-	if anim == null:
-		push_error("AnimatedSprite2D no encontrado en Player")
-
-if Input.is_action_pressed("ui_left"):
-	print("Izquierda presionada")
-
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -40,6 +32,8 @@ func _physics_process(delta: float) -> void:
 			anim.flip_h = true
 			anim.play("walk")
 		else:
-			anim.play("idle")
-			
+			anim.play("idle") 
+	else: 
+		anim.play("jump") 
+		
 	move_and_slide()
