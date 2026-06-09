@@ -11,6 +11,10 @@ config_version=5
 [application]
 
 config/name="Estrada das Variáveis"
+<<<<<<< Updated upstream
+=======
+run/main_scene="uid://bqtmoyjasko2x"
+>>>>>>> Stashed changes
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
