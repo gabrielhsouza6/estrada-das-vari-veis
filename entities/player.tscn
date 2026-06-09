@@ -221,6 +221,7 @@ height = 10.999999
 
 [node name="player" type="CharacterBody2D" unique_id=1998933627]
 scale = Vector2(1.25, 1.25)
+collision_layer = 2
 script = SubResource("GDScript_b0kkn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=113577951]
@@ -233,7 +234,6 @@ position = Vector2(0, -5.5)
 shape = SubResource("CapsuleShape2D_merdl")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2034865471]
-position = Vector2(97.59999, -63.199997)
-zoom = Vector2(1.5, 1.5)
+position = Vector2(144.8, -105.59999)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true

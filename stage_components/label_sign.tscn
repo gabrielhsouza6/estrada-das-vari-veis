@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b0y1vwgpuqigy"]
+
+[ext_resource type="Script" uid="uid://cjnmpfv4my3ax" path="res://scripts/label_sign.gd" id="1_6u3aq"]
+[ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="2_kxvxs"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_44pei"]
+load_path = "res://.godot/imported/Dungeon Tile Set.png-5c2eef14fdc2ca8a7ea66631a3b880e1.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f52u"]
+size = Vector2(16, 15)
+
+[node name="label_sign" type="Area2D" unique_id=1512757288]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_6u3aq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=533498537]
+texture = SubResource("CompressedTexture2D_44pei")
+region_enabled = true
+region_rect = Rect2(129, 161, 15, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1160466908]
+z_index = -1
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_5f52u")
+
+[node name="Label" type="Label" parent="." unique_id=132073223]
+visible = false
+offset_left = -39.0
+offset_top = -17.0
+offset_right = 39.0
+offset_bottom = -9.0
+theme_override_fonts/font = ExtResource("2_kxvxs")
+theme_override_font_sizes/font_size = 7
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
