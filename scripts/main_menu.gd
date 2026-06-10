@@ -1,6 +1,6 @@
 extends Control
 
-const GAME_SCENE := "res://scenes/game.tscn"
+const GAME_SCENE := "res://scenes/stage_1_1.tscn"
 const FONT_PATH := "res://fonts/Minecraft.ttf"
 const PLAYER_PATH := "res://Assets/character_assets/player/MiniWorker.png"
 

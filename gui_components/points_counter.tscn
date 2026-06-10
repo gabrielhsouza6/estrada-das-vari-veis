@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cjjtoin8r4y"]
+
+[ext_resource type="Script" uid="uid://cwc3ni3qe43vo" path="res://scripts/points_counter.gd" id="1_cw21c"]
+[ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="2_beuc5"]
+
+[node name="points_counter" type="Control" unique_id=9606221]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cw21c")
+
+[node name="Label" type="Label" parent="." unique_id=611208419]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_beuc5")
+theme_override_font_sizes/font_size = 24
+text = "P"
