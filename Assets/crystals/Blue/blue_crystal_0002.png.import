@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6fkcbfgortu5"
-path="res://.godot/imported/Running (32 x 32).png-124c44e8c0d20037edfb7ac7891b35c2.ctex"
+uid="uid://7os1adl80khh"
+path="res://.godot/imported/blue_crystal_0002.png-3a2992c1c50c714f552772b1638f2412.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/2 - Mr. Mochi/Running (32 x 32).png"
-dest_files=["res://.godot/imported/Running (32 x 32).png-124c44e8c0d20037edfb7ac7891b35c2.ctex"]
+source_file="res://Assets/crystals/Blue/blue_crystal_0002.png"
+dest_files=["res://.godot/imported/blue_crystal_0002.png-3a2992c1c50c714f552772b1638f2412.ctex"]
 
 [params]
 

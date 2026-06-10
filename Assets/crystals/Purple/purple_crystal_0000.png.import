@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cohwufkr36krf"
-path="res://.godot/imported/Jumping (32 x 32).png-4b613362e9e2e5062c0828914e8f9237.ctex"
+uid="uid://cyov615bixrmd"
+path="res://.godot/imported/purple_crystal_0000.png-28155cc96f39cdd52d9ab5df536f8a1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/2 - Mr. Mochi/Jumping (32 x 32).png"
-dest_files=["res://.godot/imported/Jumping (32 x 32).png-4b613362e9e2e5062c0828914e8f9237.ctex"]
+source_file="res://Assets/crystals/Purple/purple_crystal_0000.png"
+dest_files=["res://.godot/imported/purple_crystal_0000.png-28155cc96f39cdd52d9ab5df536f8a1e.ctex"]
 
 [params]
 

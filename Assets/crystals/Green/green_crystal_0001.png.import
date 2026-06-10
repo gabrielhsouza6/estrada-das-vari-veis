@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjtvbsv504x0p"
-path="res://.godot/imported/Hurt (32 x 32).png-5e5c3e7dac3fe10edc637a5ee49912bf.ctex"
+uid="uid://c43pdfy14svcg"
+path="res://.godot/imported/green_crystal_0001.png-3857cee92e85af68712d0178a0e5a8f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/2 - Mr. Mochi/Hurt (32 x 32).png"
-dest_files=["res://.godot/imported/Hurt (32 x 32).png-5e5c3e7dac3fe10edc637a5ee49912bf.ctex"]
+source_file="res://Assets/crystals/Green/green_crystal_0001.png"
+dest_files=["res://.godot/imported/green_crystal_0001.png-3857cee92e85af68712d0178a0e5a8f1.ctex"]
 
 [params]
 
