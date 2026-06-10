@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://d0gnytvddhkum"]
+
+[ext_resource type="Script" uid="uid://dn7a00p4xsrey" path="res://scripts/health_bar.gd" id="1_flpy3"]
+[ext_resource type="Texture2D" uid="uid://bxjcc5yy7s08e" path="res://Assets/gui_assets/Stone_UI_Sprite_Sheet.png" id="2_0ajx3"]
+
+[sub_resource type="Animation" id="Animation_ii4xp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("health_bar_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(25, 12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("red_bar:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, 12.5)]
+}
+
+[sub_resource type="Animation" id="Animation_s8kso"]
+resource_name = "take_damage"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("health_bar_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(25, 12), Vector2(28, 12), Vector2(23, 12), Vector2(25, 12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("red_bar:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(34, 12.5), Vector2(37, 12.5), Vector2(32, 12.5), Vector2(34, 12.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yxkjy"]
+_data = {
+&"RESET": SubResource("Animation_ii4xp"),
+&"take_damage": SubResource("Animation_s8kso")
+}
+
+[node name="health_bar" type="Control" unique_id=106951705]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+script = ExtResource("1_flpy3")
+
+[node name="health_bar_sprite" type="Sprite2D" parent="." unique_id=729311953]
+position = Vector2(25, 12)
+texture = ExtResource("2_0ajx3")
+region_enabled = true
+region_rect = Rect2(213, 37, 49, 21)
+
+[node name="red_bar" type="Sprite2D" parent="." unique_id=1315794588]
+position = Vector2(34, 12.5)
+scale = Vector2(1.375, 0.74999994)
+texture = ExtResource("2_0ajx3")
+region_enabled = true
+region_rect = Rect2(336, 64, 16, 4)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=229315429]
+libraries/ = SubResource("AnimationLibrary_yxkjy")

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cckyjw44bivke"]
 
 [ext_resource type="Script" uid="uid://doy8jgdddgqa1" path="res://scripts/backpack.gd" id="1_eieek"]
-[ext_resource type="Texture2D" uid="uid://bqd36uqoo5qgy" path="res://Assets/backpack/backpack_1.png" id="2_3l7hs"]
-[ext_resource type="Texture2D" uid="uid://c2px2ryjasc8m" path="res://Assets/backpack/backpack_2.png" id="3_qqdk6"]
+[ext_resource type="Texture2D" uid="uid://bqd36uqoo5qgy" path="res://Assets/gui_assets/backpack/backpack_1.png" id="2_3l7hs"]
+[ext_resource type="Texture2D" uid="uid://c2px2ryjasc8m" path="res://Assets/gui_assets/backpack/backpack_2.png" id="3_qqdk6"]
 
 [sub_resource type="Animation" id="Animation_ycjqi"]
 length = 0.001

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://clqsk338bwn6b" path="res://entities/player.tscn" id="2_8rw01"]
 [ext_resource type="PackedScene" uid="uid://b0y1vwgpuqigy" path="res://stage_components/label_sign.tscn" id="3_8rw01"]
 [ext_resource type="PackedScene" uid="uid://cnu8sw6q63xga" path="res://stage_components/number_crystal.tscn" id="4_k1ehm"]
-[ext_resource type="PackedScene" uid="uid://cckyjw44bivke" path="res://gui_components/backpack.tscn" id="5_2l7rc"]
+[ext_resource type="PackedScene" uid="uid://dd1kr72xof526" path="res://stage_components/killzone.tscn" id="5_2l7rc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k1ehm"]
 texture = ExtResource("1_gvt4e")
@@ -330,6 +330,9 @@ texture = ExtResource("1_gvt4e")
 [sub_resource type="TileSet" id="TileSet_8rw01"]
 sources/0 = SubResource("TileSetAtlasSource_gvt4e")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0aeih"]
+size = Vector2(96, 9)
+
 [node name="stage1_1" type="Node2D" unique_id=487134051]
 
 [node name="floor_walls" type="TileMapLayer" parent="." unique_id=1335838373]
@@ -342,7 +345,7 @@ tile_map_data = PackedByteArray("AAAMAAwAAAAMAAMAAAAHAA0AAAALAAMAAAAHAA4AAAALAAQ
 tile_set = SubResource("TileSet_8rw01")
 
 [node name="player" parent="." unique_id=1998933627 instance=ExtResource("2_8rw01")]
-position = Vector2(41, 314)
+position = Vector2(36.000004, 309)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1745837013]
 position = Vector2(130.40001, -60.8)
@@ -353,6 +356,8 @@ limit_right = 1300
 limit_bottom = 360
 limit_smoothed = true
 position_smoothing_enabled = true
+drag_vertical_enabled = true
+drag_top_margin = 0.49
 
 [node name="Signs" type="Node" parent="." unique_id=2065239303]
 
@@ -367,7 +372,7 @@ flip_horizontal = true
 
 [node name="Crystals" type="Node" parent="." unique_id=426410873]
 
-[node name="Number_crystal" parent="Crystals" unique_id=1638422894 instance=ExtResource("4_k1ehm")]
+[node name="Number_crystal" parent="Crystals" unique_id=1220102683 instance=ExtResource("4_k1ehm")]
 position = Vector2(176, 225)
 number = 2
 color = "blue"
@@ -382,6 +387,20 @@ position = Vector2(657, 161)
 number = 7
 color = "pink"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1867688395]
+[node name="Number_crystal4" parent="Crystals" unique_id=1638422894 instance=ExtResource("4_k1ehm")]
+position = Vector2(350, 177)
+number = 1
+color = "blue"
 
-[node name="Backpack" parent="CanvasLayer" unique_id=1172469523 instance=ExtResource("5_2l7rc")]
+[node name="Killzones" type="Node" parent="." unique_id=1162364356]
+
+[node name="Killzone" parent="Killzones" unique_id=31142382 instance=ExtResource("5_2l7rc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzones/Killzone" unique_id=166217658]
+position = Vector2(528, 347.5)
+shape = SubResource("RectangleShape2D_0aeih")
+
+[node name="Number_crystal" parent="." unique_id=1063717198 instance=ExtResource("4_k1ehm")]
+position = Vector2(492, 209)
+number = 5
+color = "purple"

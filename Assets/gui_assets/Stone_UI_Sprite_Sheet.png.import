@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqd36uqoo5qgy"
-path="res://.godot/imported/backpack_1.png-5a37764801a9f3c9cc307e9f3f503a74.ctex"
+uid="uid://bxjcc5yy7s08e"
+path="res://.godot/imported/Stone_UI_Sprite_Sheet.png-0c6e95c4a7f169b74e6a7a9dd1a9d075.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/backpack/backpack_1.png"
-dest_files=["res://.godot/imported/backpack_1.png-5a37764801a9f3c9cc307e9f3f503a74.ctex"]
+source_file="res://Assets/gui_assets/Stone_UI_Sprite_Sheet.png"
+dest_files=["res://.godot/imported/Stone_UI_Sprite_Sheet.png-0c6e95c4a7f169b74e6a7a9dd1a9d075.ctex"]
 
 [params]
 
