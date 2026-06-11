@@ -10,9 +10,7 @@ func _ready() -> void:
 	animated_sprite.play(color)
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.has_method("take_damage"):
-		body.take_damage(2)
-		GameManager.crystal_collected_emit(number)
+	GameManager.crystal_collected_emit(number)
 	queue_free()
 	
 

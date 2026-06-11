@@ -9,6 +9,6 @@ func _process(delta: float) -> void:
 			if correct_door:
 				$AnimationPlayer.play("open_door")
 			else:
-				GameManager.stage_points -= 100
+				$"../../player".health = 0
 			open = true
 		

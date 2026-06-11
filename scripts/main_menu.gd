@@ -11,13 +11,13 @@ func _ready() -> void:
 	create_menu()
 
 func create_menu() -> void:
-	var bg := ColorRect.new()
-	bg.color = Color(0.045, 0.04, 0.09, 1)
-	bg.size = Vector2(576, 324)
-	add_child(bg)
+	#var bg := ColorRect.new()
+	#bg.color = Color(0.045, 0.04, 0.09, 1)
+	#bg.size = Vector2(576, 324)
+	#add_child(bg)
 
 	# Título bem enquadrado no topo
-	add_shadow_text("Estrada\ndas\nVariáveis", Vector2(168, 8), Vector2(240, 98), 31)
+	add_shadow_text("Estrada\ndas\nVariaveis", Vector2(168, 8), Vector2(240, 98), 31)
 
 	# Menu central abaixo do título
 	var menu := VBoxContainer.new()
@@ -31,19 +31,19 @@ func create_menu() -> void:
 	menu.add_child(jogar)
 
 	menu.add_child(create_button("Loja"))
-	menu.add_child(create_button("Opções"))
+	menu.add_child(create_button("Opcoes"))
 
 	var sair := create_button("Sair")
 	sair.pressed.connect(_on_sair_pressed)
 	menu.add_child(sair)
 
 	# Lado esquerdo - personagem acima do texto
-	add_character(Vector2(105, 188))
-	add_shadow_text("Personagens", Vector2(28, 232), Vector2(160, 30), 17)
-
-	# Lado direito - power-up acima do texto
-	add_power_icon(Vector2(438, 185))
-	add_shadow_text("Power-ups", Vector2(388, 232), Vector2(160, 30), 17)
+	#add_character(Vector2(105, 188))
+	#add_shadow_text("Personagens", Vector2(28, 232), Vector2(160, 30), 17)
+#
+	## Lado direito - power-up acima do texto
+	#add_power_icon(Vector2(438, 185))
+	#add_shadow_text("Power-ups", Vector2(388, 232), Vector2(160, 30), 17)
 
 	jogar.grab_focus()
 
@@ -79,39 +79,39 @@ func create_button(texto: String) -> Button:
 	b.add_theme_font_size_override("font_size", 17)
 	return b
 
-func add_character(pos: Vector2) -> void:
-	var texture := load(PLAYER_PATH)
-	if texture == null:
-		return
+#func add_character(pos: Vector2) -> void:
+	#var texture := load(PLAYER_PATH)
+	#if texture == null:
+		#return
+#
+	#var sprite := Sprite2D.new()
+	#sprite.texture = texture
+	#sprite.position = pos
+	#sprite.scale = Vector2(2.5, 2.5)
+	#sprite.region_enabled = true
+	#sprite.region_rect = Rect2(0, 0, 16, 16)
+	#add_child(sprite)
 
-	var sprite := Sprite2D.new()
-	sprite.texture = texture
-	sprite.position = pos
-	sprite.scale = Vector2(2.5, 2.5)
-	sprite.region_enabled = true
-	sprite.region_rect = Rect2(0, 0, 16, 16)
-	add_child(sprite)
-
-func add_power_icon(pos: Vector2) -> void:
-	var shadow := Label.new()
-	shadow.text = "⚡"
-	shadow.position = pos + Vector2(3, 3)
-	shadow.size = Vector2(60, 60)
-	shadow.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	shadow.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	shadow.add_theme_color_override("font_color", Color.BLACK)
-	shadow.add_theme_font_size_override("font_size", 42)
-	add_child(shadow)
-
-	var icon := Label.new()
-	icon.text = "⚡"
-	icon.position = pos
-	icon.size = Vector2(60, 60)
-	icon.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	icon.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	icon.add_theme_color_override("font_color", Color.YELLOW)
-	icon.add_theme_font_size_override("font_size", 42)
-	add_child(icon)
+#func add_power_icon(pos: Vector2) -> void:
+	#var shadow := Label.new()
+	#shadow.text = "⚡"
+	#shadow.position = pos + Vector2(3, 3)
+	#shadow.size = Vector2(60, 60)
+	#shadow.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	#shadow.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	#shadow.add_theme_color_override("font_color", Color.BLACK)
+	#shadow.add_theme_font_size_override("font_size", 42)
+	#add_child(shadow)
+#
+	#var icon := Label.new()
+	#icon.text = "⚡"
+	#icon.position = pos
+	#icon.size = Vector2(60, 60)
+	#icon.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	#icon.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	#icon.add_theme_color_override("font_color", Color.YELLOW)
+	#icon.add_theme_font_size_override("font_size", 42)
+	#add_child(icon)
 
 func _on_jogar_pressed() -> void:
 	get_tree().change_scene_to_file(GAME_SCENE)
