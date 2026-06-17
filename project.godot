@@ -50,10 +50,12 @@ jump={
 
 [layer_names]
 
-2d_physics/layer_1="Floor and Walls"
-2d_physics/layer_2="Player"
-2d_physics/layer_3="Enemies"
-2d_physics/layer_4="Stage Components"
+2d_physics/layer_1="background                 "
+2d_physics/layer_2=" floor and walls"
+2d_physics/layer_3="player"
+2d_physics/layer_4="enemies"
+2d_physics/layer_5="Stage Components"
+2d_physics/layer_6="levelEnd"
 
 [physics]
 
