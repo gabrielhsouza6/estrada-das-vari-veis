@@ -396,6 +396,11 @@ position = Vector2(908, 321)
 number = 1
 color = "blue"
 
+[node name="Number_crystal5" parent="Crystals" unique_id=1063717198 instance=ExtResource("4_k1ehm")]
+position = Vector2(492, 209)
+number = 5
+color = "purple"
+
 [node name="Killzones" type="Node" parent="." unique_id=1162364356]
 
 [node name="Killzone" parent="Killzones" unique_id=31142382 instance=ExtResource("5_2l7rc")]
@@ -404,12 +409,17 @@ color = "blue"
 position = Vector2(528, 347.5)
 shape = SubResource("RectangleShape2D_0aeih")
 
+<<<<<<< Updated upstream
 [node name="Number_crystal" parent="." unique_id=1063717198 instance=ExtResource("4_k1ehm")]
 position = Vector2(492, 209)
 number = 5
 color = "purple"
 
 [node name="Doors" type="Node" parent="." unique_id=1977056567]
+=======
+[node name="levelEnd" parent="." unique_id=432909749 instance=ExtResource("6_0aeih")]
+position = Vector2(1266, 223)
+>>>>>>> Stashed changes
 
 [node name="left_door" parent="Doors" unique_id=1118435807 instance=ExtResource("7_otndh")]
 position = Vector2(1112, 192)
