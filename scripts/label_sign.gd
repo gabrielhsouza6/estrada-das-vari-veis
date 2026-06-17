@@ -14,3 +14,6 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 	$Label.visible = false
+	
+func set_text(text: String) -> void:
+	$Label.text = text

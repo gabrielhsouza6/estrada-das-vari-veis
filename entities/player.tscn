@@ -3,11 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://c2nngl0g5dvfo" path="res://Assets/character_assets/player/MiniVillagerMan.png" id="1_merdl"]
 [ext_resource type="PackedScene" uid="uid://cckyjw44bivke" path="res://gui_components/backpack.tscn" id="2_b0kkn"]
 [ext_resource type="PackedScene" uid="uid://d0gnytvddhkum" path="res://gui_components/health_bar.tscn" id="3_e4p34"]
+[ext_resource type="PackedScene" uid="uid://cjjtoin8r4y" path="res://gui_components/points_counter.tscn" id="4_rfe5m"]
 
 [sub_resource type="GDScript" id="GDScript_b0kkn"]
 script/source = "extends CharacterBody2D
 
 var dead = false
+var taking_damage = false
 var max_health:int = 10
 var health:int = max_health
 const SPEED = 150.0
@@ -30,7 +32,9 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis(\"left\", \"right\")
+	var direction: float
+	if !dead and !taking_damage:
+		direction = Input.get_axis(\"left\", \"right\")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -42,23 +46,31 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.flip_h = false
 	
 	if !dead:
-		if is_on_floor():
-			if direction != 0:
-				animated_sprite.play(\"walk\")
-			else:
-				animated_sprite.play(\"idle\")
+		if taking_damage:
+			animated_sprite.play(\"hurt\")
 		else:
-			animated_sprite.play(\"jump\")
+			if is_on_floor():
+				if direction != 0:
+					animated_sprite.play(\"walk\")
+				else:
+					animated_sprite.play(\"idle\")
+			else:
+				animated_sprite.play(\"jump\")
 
 	move_and_slide()
 	
 func take_damage(damage: int) -> void:
 	health -= damage
+	taking_damage = true
 	GameManager.player_took_damage(damage, max_health, health)
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		get_tree().reload_current_scene()
+		GameManager.reset_stage_status()
 		
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite.animation == \"hurt\":
+		taking_damage = false
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e4p34"]
@@ -170,7 +182,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ef06p")
 }],
-"loop": true,
+"loop": false,
 "name": &"hurt",
 "speed": 6.0
 }, {
@@ -302,7 +314,7 @@ script = SubResource("GDScript_b0kkn")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=113577951]
 position = Vector2(0, -15)
 sprite_frames = SubResource("SpriteFrames_hj0ki")
-animation = &"dead"
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=18711889]
 position = Vector2(0, -5.5)
@@ -318,7 +330,14 @@ offset_left = 36.0
 offset_right = -490.5
 offset_bottom = -300.5
 
+[node name="points_counter" parent="CanvasLayer" unique_id=9606221 instance=ExtResource("4_rfe5m")]
+offset_left = 141.0
+offset_top = 15.0
+offset_right = -195.0
+offset_bottom = -285.0
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1323448932]
 libraries/ = SubResource("AnimationLibrary_qly61")
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

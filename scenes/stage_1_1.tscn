@@ -1,11 +1,16 @@
 [gd_scene format=4 uid="uid://bqtmoyjasko2x"]
 
+[ext_resource type="Script" uid="uid://cwv5capvgrum0" path="res://scripts/end_stage_signs.gd" id="1_0aeih"]
 [ext_resource type="Texture2D" uid="uid://bw7ab2biyag6m" path="res://Assets/Cave Tileset/Dungeon Tile Set/Dungeon Tile Set.png" id="1_gvt4e"]
 [ext_resource type="PackedScene" uid="uid://clqsk338bwn6b" path="res://entities/player.tscn" id="2_8rw01"]
 [ext_resource type="PackedScene" uid="uid://b0y1vwgpuqigy" path="res://stage_components/label_sign.tscn" id="3_8rw01"]
 [ext_resource type="PackedScene" uid="uid://cnu8sw6q63xga" path="res://stage_components/number_crystal.tscn" id="4_k1ehm"]
 [ext_resource type="PackedScene" uid="uid://dd1kr72xof526" path="res://stage_components/killzone.tscn" id="5_2l7rc"]
 [ext_resource type="PackedScene" uid="uid://cai1hd4r5aqb7" path="res://entities/level_end.tscn" id="6_0aeih"]
+[ext_resource type="PackedScene" uid="uid://m6difs8iq4gy" path="res://stage_components/door.tscn" id="7_otndh"]
+[ext_resource type="PackedScene" uid="uid://cmq43ckikfsj1" path="res://entities/skeleton.tscn" id="8_7dfwr"]
+[ext_resource type="PackedScene" uid="uid://bvqukwi13qsee" path="res://entities/ghost.tscn" id="9_sqc6i"]
+[ext_resource type="PackedScene" uid="uid://vb60y5hcsrvx" path="res://stage_components/barrier.tscn" id="10_mlbvl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_otndh"]
 texture = ExtResource("1_gvt4e")
@@ -380,13 +385,11 @@ drag_top_margin = 0.49
 
 [node name="Signs" type="Node" parent="." unique_id=2065239303]
 
-[node name="label_sign" parent="Signs" unique_id=1512757288 instance=ExtResource("3_8rw01")]
+[node name="left_sign" parent="Signs" unique_id=1512757288 instance=ExtResource("3_8rw01")]
 position = Vector2(1145, 201)
-text = "1 < 3 ?"
 
-[node name="label_sign2" parent="Signs" unique_id=471866074 instance=ExtResource("3_8rw01")]
+[node name="right_sign" parent="Signs" unique_id=471866074 instance=ExtResource("3_8rw01")]
 position = Vector2(1175, 201)
-text = "9 > 2 ?"
 flip_horizontal = true
 
 [node name="Crystals" type="Node" parent="." unique_id=426410873]
@@ -397,7 +400,7 @@ number = 2
 color = "blue"
 
 [node name="Number_crystal2" parent="Crystals" unique_id=380420565 instance=ExtResource("4_k1ehm")]
-position = Vector2(359, 306)
+position = Vector2(1192, 272)
 number = 5
 color = "green"
 
@@ -407,9 +410,14 @@ number = 7
 color = "pink"
 
 [node name="Number_crystal4" parent="Crystals" unique_id=1638422894 instance=ExtResource("4_k1ehm")]
-position = Vector2(350, 177)
+position = Vector2(908, 321)
 number = 1
 color = "blue"
+
+[node name="Number_crystal5" parent="Crystals" unique_id=1063717198 instance=ExtResource("4_k1ehm")]
+position = Vector2(492, 209)
+number = 5
+color = "purple"
 
 [node name="Killzones" type="Node" parent="." unique_id=1162364356]
 
@@ -431,3 +439,50 @@ position = Vector2(1266, 223)
 shape = SubResource("RectangleShape2D_otndh")
 
 [editable path="levelEnd"]
+
+[node name="left_door" parent="Doors" unique_id=1118435807 instance=ExtResource("7_otndh")]
+position = Vector2(1112, 192)
+
+[node name="right_door" parent="Doors" unique_id=1877898037 instance=ExtResource("7_otndh")]
+position = Vector2(1208, 193)
+
+[node name="Enemies" type="Node" parent="." unique_id=1649098536]
+
+[node name="skeleton" parent="Enemies" unique_id=655861035 instance=ExtResource("8_7dfwr")]
+position = Vector2(510, 214.00002)
+
+[node name="ghost" parent="Enemies" unique_id=369886268 instance=ExtResource("9_sqc6i")]
+position = Vector2(628, 305)
+
+[node name="skeleton2" parent="Enemies" unique_id=937614169 instance=ExtResource("8_7dfwr")]
+position = Vector2(841, 230)
+
+[node name="ghost2" parent="Enemies" unique_id=952791646 instance=ExtResource("9_sqc6i")]
+position = Vector2(1064, 309)
+
+[node name="Barriers" type="Node" parent="." unique_id=1517224785]
+
+[node name="Barrier" parent="Barriers" unique_id=1820441329 instance=ExtResource("10_mlbvl")]
+position = Vector2(546, 307)
+
+[node name="Barrier2" parent="Barriers" unique_id=1946531693 instance=ExtResource("10_mlbvl")]
+position = Vector2(687, 307)
+
+[node name="Barrier3" parent="Barriers" unique_id=1784686944 instance=ExtResource("10_mlbvl")]
+position = Vector2(561, 213)
+
+[node name="Barrier4" parent="Barriers" unique_id=85973928 instance=ExtResource("10_mlbvl")]
+position = Vector2(463, 213)
+
+[node name="Barrier5" parent="Barriers" unique_id=1737481216 instance=ExtResource("10_mlbvl")]
+position = Vector2(959, 228)
+
+[node name="Barrier6" parent="Barriers" unique_id=2041373257 instance=ExtResource("10_mlbvl")]
+position = Vector2(776, 229)
+
+[node name="Barrier7" parent="Barriers" unique_id=1673832104 instance=ExtResource("10_mlbvl")]
+position = Vector2(971, 309)
+
+[node name="Barrier8" parent="Barriers" unique_id=555134632 instance=ExtResource("10_mlbvl")]
+position = Vector2(1148, 308)
+
