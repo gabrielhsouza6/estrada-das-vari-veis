@@ -1,0 +1,580 @@
+[gd_scene format=3 uid="uid://exng7ffepn5k"]
+
+[ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="1_pblkw"]
+[ext_resource type="Texture2D" uid="uid://bxjcc5yy7s08e" path="res://Assets/gui_assets/Stone_UI_Sprite_Sheet.png" id="2_sqff4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2sjr"]
+bg_color = Color(0.2735844, 0.2735844, 0.2735844, 1)
+expand_margin_top = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ergh"]
+bg_color = Color(0.23329955, 0.23329955, 0.2505889, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f2co"]
+atlas = ExtResource("2_sqff4")
+region = Rect2(131, 51, 42, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2cul"]
+atlas = ExtResource("2_sqff4")
+region = Rect2(0, 0, 48, 47)
+
+[node name="stage_selection_menu" type="Control" unique_id=475814511]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1157641147]
+layout_mode = 0
+offset_right = 268.0
+offset_bottom = 159.0
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 19
+tab_alignment = 1
+current_tab = 0
+tab_0/title = "Prisao"
+tab_1/title = "Floresta"
+tab_2/title = "Castelo"
+
+[node name="Mundo 1" type="TabBar" parent="TabContainer" unique_id=1973009081]
+layout_mode = 2
+metadata/_tab_index = 0
+metadata/_tab_name = "Prisao"
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TabContainer/Mundo 1" unique_id=836303841]
+z_index = 2
+layout_mode = 0
+offset_right = 268.0
+offset_bottom = 128.0
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="level1" type="VBoxContainer" parent="TabContainer/Mundo 1/VBoxContainer" unique_id=1836162890]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="number" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level1" unique_id=620382357]
+z_index = 1
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2sjr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i2sjr")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="points" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level1" unique_id=250044322]
+z_index = 1
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ergh")
+text = "1000P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level2" type="VBoxContainer" parent="TabContainer/Mundo 1/VBoxContainer" unique_id=417734515]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="number" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level2" unique_id=218929099]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2sjr")
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="points" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level2" unique_id=1385757779]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ergh")
+text = "1000P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level3" type="VBoxContainer" parent="TabContainer/Mundo 1/VBoxContainer" unique_id=1884804944]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="number" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level3" unique_id=1882695747]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2sjr")
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="points" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level3" unique_id=386281647]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ergh")
+text = "1000P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level4" type="VBoxContainer" parent="TabContainer/Mundo 1/VBoxContainer" unique_id=1385825853]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="number" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level4" unique_id=1013928498]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2sjr")
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="points" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level4" unique_id=516340701]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ergh")
+text = "1000P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level5" type="VBoxContainer" parent="TabContainer/Mundo 1/VBoxContainer" unique_id=1808594866]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="number" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level5" unique_id=834925934]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2sjr")
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="points" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level5" unique_id=558733183]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ergh")
+text = "1000P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="TabContainer/Mundo 1" unique_id=697478169]
+visible = false
+z_index = 2
+custom_minimum_size = Vector2(268, 128)
+layout_mode = 0
+offset_right = 268.0
+offset_bottom = 128.0
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Mundo 1/VBoxContainer2" unique_id=1717182237]
+z_index = -1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 20.0
+texture = SubResource("AtlasTexture_5f2co")
+
+[node name="TextureRect2" type="TextureRect" parent="TabContainer/Mundo 1/VBoxContainer2" unique_id=1463545920]
+z_index = -1
+custom_minimum_size = Vector2(45, 50)
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.3
+texture = SubResource("AtlasTexture_5f2co")
+
+[node name="TextureRect3" type="TextureRect" parent="TabContainer/Mundo 1/VBoxContainer2" unique_id=67962423]
+z_index = -1
+custom_minimum_size = Vector2(45, 50)
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.3
+texture = SubResource("AtlasTexture_5f2co")
+
+[node name="TextureRect4" type="TextureRect" parent="TabContainer/Mundo 1/VBoxContainer2" unique_id=1627863043]
+z_index = -1
+custom_minimum_size = Vector2(45, 50)
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.3
+texture = SubResource("AtlasTexture_5f2co")
+
+[node name="TextureRect5" type="TextureRect" parent="TabContainer/Mundo 1/VBoxContainer2" unique_id=1072501367]
+z_index = -1
+custom_minimum_size = Vector2(45, 50)
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.3
+texture = SubResource("AtlasTexture_5f2co")
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Mundo 1" unique_id=676220856]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_right = 50.0
+offset_bottom = 48.0
+texture = SubResource("AtlasTexture_g2cul")
+
+[node name="Mundo 2" type="TabBar" parent="TabContainer" unique_id=2006338261]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+metadata/_tab_name = "Floresta"
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TabContainer/Mundo 2" unique_id=486879393]
+z_index = 2
+layout_mode = 0
+offset_right = 268.0
+offset_bottom = 128.0
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="level1" type="VBoxContainer" parent="TabContainer/Mundo 2/VBoxContainer" unique_id=2050059960]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="number" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level1" unique_id=240438762]
+z_index = 1
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2sjr")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="points" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level1" unique_id=681630281]
+z_index = 1
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ergh")
+text = "1000P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level2" type="VBoxContainer" parent="TabContainer/Mundo 2/VBoxContainer" unique_id=297528012]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="number" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level2" unique_id=2124603419]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2sjr")
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="points" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level2" unique_id=1958380867]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ergh")
+text = "1000P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level3" type="VBoxContainer" parent="TabContainer/Mundo 2/VBoxContainer" unique_id=848001424]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="number" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level3" unique_id=126916380]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2sjr")
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="points" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level3" unique_id=278571589]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ergh")
+text = "1000P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level4" type="VBoxContainer" parent="TabContainer/Mundo 2/VBoxContainer" unique_id=806212359]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="number" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level4" unique_id=2143732222]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2sjr")
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="points" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level4" unique_id=1702675327]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ergh")
+text = "1000P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level5" type="VBoxContainer" parent="TabContainer/Mundo 2/VBoxContainer" unique_id=812139417]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="number" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level5" unique_id=467385109]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2sjr")
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="points" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level5" unique_id=1229456622]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ergh")
+text = "1000P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mundo 3" type="TabBar" parent="TabContainer" unique_id=2145814598]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+metadata/_tab_name = "Castelo"
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TabContainer/Mundo 3" unique_id=870200753]
+z_index = 2
+layout_mode = 0
+offset_right = 268.0
+offset_bottom = 128.0
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="level1" type="VBoxContainer" parent="TabContainer/Mundo 3/VBoxContainer" unique_id=1077692991]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="number" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level1" unique_id=80568207]
+z_index = 1
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2sjr")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="points" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level1" unique_id=365319901]
+z_index = 1
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ergh")
+text = "1000P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level2" type="VBoxContainer" parent="TabContainer/Mundo 3/VBoxContainer" unique_id=1321784039]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="number" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level2" unique_id=748116948]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2sjr")
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="points" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level2" unique_id=134934956]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ergh")
+text = "1000P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level3" type="VBoxContainer" parent="TabContainer/Mundo 3/VBoxContainer" unique_id=51488964]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="number" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level3" unique_id=1604984420]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2sjr")
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="points" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level3" unique_id=993314856]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ergh")
+text = "1000P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level4" type="VBoxContainer" parent="TabContainer/Mundo 3/VBoxContainer" unique_id=369036790]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="number" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level4" unique_id=1035756276]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2sjr")
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="points" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level4" unique_id=203640530]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ergh")
+text = "1000P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level5" type="VBoxContainer" parent="TabContainer/Mundo 3/VBoxContainer" unique_id=292513487]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="number" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level5" unique_id=1715479686]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2sjr")
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="points" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level5" unique_id=1359932034]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("1_pblkw")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ergh")
+text = "1000P"
+horizontal_alignment = 1
+vertical_alignment = 1

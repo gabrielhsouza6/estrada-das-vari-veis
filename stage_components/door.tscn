@@ -44,7 +44,7 @@ _data = {
 }
 
 [node name="door" type="Area2D" unique_id=1118435807]
-z_index = -1
+z_index = 1
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_k3nfx")

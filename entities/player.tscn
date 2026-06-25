@@ -307,6 +307,7 @@ _data = {
 }
 
 [node name="player" type="CharacterBody2D" unique_id=1998933627]
+z_index = 2
 scale = Vector2(1.25, 1.25)
 collision_layer = 2
 script = SubResource("GDScript_b0kkn")
