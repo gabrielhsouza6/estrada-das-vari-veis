@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://bqtmoyjasko2x"]
 
-[ext_resource type="Script" uid="uid://cwv5capvgrum0" path="res://scripts/end_stage_signs.gd" id="1_0aeih"]
 [ext_resource type="Texture2D" uid="uid://bw7ab2biyag6m" path="res://Assets/Cave Tileset/Dungeon Tile Set/Dungeon Tile Set.png" id="1_gvt4e"]
 [ext_resource type="PackedScene" uid="uid://clqsk338bwn6b" path="res://entities/player.tscn" id="2_8rw01"]
 [ext_resource type="PackedScene" uid="uid://b0y1vwgpuqigy" path="res://stage_components/label_sign.tscn" id="3_8rw01"]
@@ -427,23 +426,21 @@ color = "purple"
 position = Vector2(528, 347.5)
 shape = SubResource("RectangleShape2D_0aeih")
 
-[node name="Number_crystal" parent="." unique_id=1063717198 instance=ExtResource("4_k1ehm")]
+[node name="Number_crystal" parent="." unique_id=926679418 instance=ExtResource("4_k1ehm")]
 position = Vector2(492, 209)
 number = 5
 color = "purple"
 
 [node name="levelEnd" parent="." unique_id=432909749 instance=ExtResource("6_0aeih")]
-position = Vector2(1266, 223)
+position = Vector2(1280, 109)
 
 [node name="CollisionShape2D" parent="levelEnd" index="0" unique_id=1368659992]
 shape = SubResource("RectangleShape2D_otndh")
 
-[editable path="levelEnd"]
-
-[node name="left_door" parent="Doors" unique_id=1118435807 instance=ExtResource("7_otndh")]
+[node name="Doors#left_door" parent="." unique_id=1118435807 instance=ExtResource("7_otndh")]
 position = Vector2(1112, 192)
 
-[node name="right_door" parent="Doors" unique_id=1877898037 instance=ExtResource("7_otndh")]
+[node name="Doors#right_door" parent="." unique_id=1877898037 instance=ExtResource("7_otndh")]
 position = Vector2(1208, 193)
 
 [node name="Enemies" type="Node" parent="." unique_id=1649098536]
@@ -486,3 +483,4 @@ position = Vector2(971, 309)
 [node name="Barrier8" parent="Barriers" unique_id=555134632 instance=ExtResource("10_mlbvl")]
 position = Vector2(1148, 308)
 
+[editable path="levelEnd"]
