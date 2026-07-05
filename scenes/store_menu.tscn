@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://l13wh0rphtol"]
+
+[ext_resource type="Texture2D" uid="uid://bhwkga35i4daw" path="res://Assets/character_assets/player/MiniWorker.png" id="1_svb7k"]
+[ext_resource type="Script" uid="uid://cjg88v16smhe8" path="res://scripts/exhibition_container.gd" id="2_c7s3y"]
+[ext_resource type="Script" uid="uid://b2fe11hcegne7" path="res://scripts/characters_store_tab.gd" id="2_fwgrn"]
+[ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="2_vgj0l"]
+[ext_resource type="Script" uid="uid://etqa3no11613" path="res://scripts/store_panel.gd" id="4_fwgrn"]
+[ext_resource type="Texture2D" uid="uid://b2p2jsdq6e62n" path="res://Assets/character_assets/player/MiniNobleWoman.png" id="5_4xa5r"]
+
+[sub_resource type="Animation" id="Animation_sx2kr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_c7s3y"]
+resource_name = "character_default"
+length = 0.8
+loop_mode = 1
+step = 0.033
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fwgrn"]
+_data = {
+&"RESET": SubResource("Animation_sx2kr"),
+&"character_default": SubResource("Animation_c7s3y")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upscj"]
+atlas = ExtResource("5_4xa5r")
+region = Rect2(6, 47, 20, 19)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0px8s"]
+bg_color = Color(0.003921569, 0.003921569, 0.003921569, 0.12156863)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[node name="store_menu" type="Control" unique_id=1581573114]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1360697878]
+layout_mode = 0
+offset_right = 353.0
+offset_bottom = 226.0
+theme_override_fonts/font = ExtResource("2_vgj0l")
+current_tab = 0
+
+[node name="Characters" type="TabBar" parent="TabContainer" unique_id=1541688803]
+layout_mode = 2
+script = ExtResource("2_fwgrn")
+metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Characters" unique_id=858503850]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 3.0
+offset_right = 348.0
+offset_bottom = 198.0
+theme_override_constants/separation = 10
+
+[node name="ExhibitionContainer" type="VBoxContainer" parent="TabContainer/Characters/HBoxContainer" unique_id=685710014]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+script = ExtResource("2_c7s3y")
+
+[node name="Container" type="Container" parent="TabContainer/Characters/HBoxContainer/ExhibitionContainer" unique_id=144236460]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="TabContainer/Characters/HBoxContainer/ExhibitionContainer" unique_id=1323006954]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="TabContainer/Characters/HBoxContainer/ExhibitionContainer/PanelContainer" unique_id=1184916128]
+position = Vector2(62, 65)
+scale = Vector2(3, 3)
+texture = ExtResource("1_svb7k")
+hframes = 6
+region_enabled = true
+region_rect = Rect2(0, 47, 192, 19)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TabContainer/Characters/HBoxContainer/ExhibitionContainer/PanelContainer" unique_id=1796054159]
+root_node = NodePath("../Sprite2D")
+libraries/ = SubResource("AnimationLibrary_fwgrn")
+autoplay = &"character_default"
+
+[node name="Label" type="Label" parent="TabContainer/Characters/HBoxContainer/ExhibitionContainer" unique_id=678225555]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vgj0l")
+theme_override_font_sizes/font_size = 14
+text = "Mini Worker"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Container2" type="Container" parent="TabContainer/Characters/HBoxContainer/ExhibitionContainer" unique_id=1301080810]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="TabContainer/Characters/HBoxContainer/ExhibitionContainer" unique_id=1487190592]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vgj0l")
+theme_override_font_sizes/font_size = 24
+text = "9999 P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Characters/HBoxContainer" unique_id=996478805]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Characters/HBoxContainer/ScrollContainer" unique_id=124435643]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="PanelContainer" type="MarginContainer" parent="TabContainer/Characters/HBoxContainer/ScrollContainer/GridContainer" unique_id=685231084]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_fwgrn")
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Characters/HBoxContainer/ScrollContainer/GridContainer/PanelContainer" unique_id=1115587189]
+layout_mode = 2
+texture = SubResource("AtlasTexture_upscj")
+
+[node name="Button" type="Button" parent="TabContainer/Characters/HBoxContainer/ScrollContainer/GridContainer/PanelContainer" unique_id=1894830178]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_0px8s")
+
+[node name="Power-Ups" type="TabBar" parent="TabContainer" unique_id=1787536969]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Extra Stages" type="TabBar" parent="TabContainer" unique_id=51659928]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[connection signal="panel_clicked" from="TabContainer/Characters/HBoxContainer/ScrollContainer/GridContainer/PanelContainer" to="TabContainer/Characters/HBoxContainer/ExhibitionContainer" method="_on_panel_container_panel_clicked"]

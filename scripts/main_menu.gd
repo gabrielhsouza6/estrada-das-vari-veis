@@ -1,6 +1,8 @@
 extends Control
 
-const GAME_SCENE := "res://scenes/stage_1_1.tscn"
+signal on_jogar
+
+const GAME_SCENE := "res://scenes/stage_selection_menu.tscn"
 const FONT_PATH := "res://fonts/Minecraft.ttf"
 const PLAYER_PATH := "res://Assets/character_assets/player/MiniWorker.png"
 
@@ -114,7 +116,9 @@ func create_button(texto: String) -> Button:
 	#add_child(icon)
 
 func _on_jogar_pressed() -> void:
-	get_tree().change_scene_to_file(GAME_SCENE)
+	visible = false
+	on_jogar.emit()
+	#get_tree().change_scene_to_file(GAME_SCENE)
 
 func _on_sair_pressed() -> void:
 	get_tree().quit()

@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://exng7ffepn5k"]
 
+[ext_resource type="Script" uid="uid://c5jfy23txvuk0" path="res://scripts/stage_selection_menu.gd" id="1_i2sjr"]
 [ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="1_pblkw"]
 [ext_resource type="Texture2D" uid="uid://bxjcc5yy7s08e" path="res://Assets/gui_assets/Stone_UI_Sprite_Sheet.png" id="2_sqff4"]
+[ext_resource type="Script" uid="uid://ty1ghhivp0uv" path="res://scripts/stage_button.gd" id="3_6ergh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2sjr"]
 bg_color = Color(0.2735844, 0.2735844, 0.2735844, 1)
@@ -9,6 +11,8 @@ expand_margin_top = 4.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ergh"]
 bg_color = Color(0.23329955, 0.23329955, 0.2505889, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i2sjr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5f2co"]
 atlas = ExtResource("2_sqff4")
@@ -25,6 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_i2sjr")
 
 [node name="TabContainer" type="TabContainer" parent="." unique_id=1157641147]
 layout_mode = 0
@@ -46,19 +51,23 @@ metadata/_tab_name = "Prisao"
 [node name="VBoxContainer" type="HBoxContainer" parent="TabContainer/Mundo 1" unique_id=836303841]
 z_index = 2
 layout_mode = 0
+offset_top = 45.0
 offset_right = 268.0
-offset_bottom = 128.0
+offset_bottom = 90.0
 theme_override_constants/separation = 6
 alignment = 1
 
-[node name="level1" type="VBoxContainer" parent="TabContainer/Mundo 1/VBoxContainer" unique_id=1836162890]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Mundo 1/VBoxContainer" unique_id=1496654422]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer" unique_id=1836162890]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 theme_override_constants/separation = 0
 
-[node name="number" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level1" unique_id=620382357]
+[node name="number" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer/HBoxContainer" unique_id=620382357]
 z_index = 1
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
@@ -71,7 +80,7 @@ text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="points" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level1" unique_id=250044322]
+[node name="points" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer/HBoxContainer" unique_id=250044322]
 z_index = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -83,14 +92,21 @@ text = "1000P"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level2" type="VBoxContainer" parent="TabContainer/Mundo 1/VBoxContainer" unique_id=417734515]
+[node name="stage_1_1" type="Button" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer" unique_id=1828535057]
+layout_mode = 2
+script = ExtResource("3_6ergh")
+
+[node name="MarginContainer2" type="MarginContainer" parent="TabContainer/Mundo 1/VBoxContainer" unique_id=1308854081]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer2" unique_id=417734515]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 theme_override_constants/separation = 0
 
-[node name="number" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level2" unique_id=218929099]
+[node name="number" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=218929099]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_vertical = 1
@@ -101,7 +117,7 @@ text = "2"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="points" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level2" unique_id=1385757779]
+[node name="points" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1385757779]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 10
@@ -112,14 +128,24 @@ text = "1000P"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level3" type="VBoxContainer" parent="TabContainer/Mundo 1/VBoxContainer" unique_id=1884804944]
+[node name="stage_2_1" type="Button" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer2" unique_id=1786161694]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_i2sjr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i2sjr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i2sjr")
+script = ExtResource("3_6ergh")
+
+[node name="MarginContainer3" type="MarginContainer" parent="TabContainer/Mundo 1/VBoxContainer" unique_id=253484169]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer3" unique_id=1884804944]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 theme_override_constants/separation = 0
 
-[node name="number" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level3" unique_id=1882695747]
+[node name="number" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer3/HBoxContainer" unique_id=1882695747]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_vertical = 1
@@ -130,7 +156,7 @@ text = "3"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="points" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level3" unique_id=386281647]
+[node name="points" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer3/HBoxContainer" unique_id=386281647]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 10
@@ -141,14 +167,24 @@ text = "1000P"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level4" type="VBoxContainer" parent="TabContainer/Mundo 1/VBoxContainer" unique_id=1385825853]
+[node name="stage_3_1" type="Button" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer3" unique_id=318346056]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_i2sjr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i2sjr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i2sjr")
+script = ExtResource("3_6ergh")
+
+[node name="MarginContainer4" type="MarginContainer" parent="TabContainer/Mundo 1/VBoxContainer" unique_id=182935054]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer4" unique_id=1385825853]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 theme_override_constants/separation = 0
 
-[node name="number" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level4" unique_id=1013928498]
+[node name="number" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer4/HBoxContainer" unique_id=1013928498]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_vertical = 1
@@ -159,7 +195,7 @@ text = "4"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="points" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level4" unique_id=516340701]
+[node name="points" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer4/HBoxContainer" unique_id=516340701]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 10
@@ -170,14 +206,24 @@ text = "1000P"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level5" type="VBoxContainer" parent="TabContainer/Mundo 1/VBoxContainer" unique_id=1808594866]
+[node name="stage_4_1" type="Button" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer4" unique_id=841337300]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_i2sjr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i2sjr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i2sjr")
+script = ExtResource("3_6ergh")
+
+[node name="MarginContainer5" type="MarginContainer" parent="TabContainer/Mundo 1/VBoxContainer" unique_id=1169516510]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer5" unique_id=1808594866]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 theme_override_constants/separation = 0
 
-[node name="number" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level5" unique_id=834925934]
+[node name="number" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer5/HBoxContainer" unique_id=834925934]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_vertical = 1
@@ -188,7 +234,7 @@ text = "5"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="points" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/level5" unique_id=558733183]
+[node name="points" type="Label" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer5/HBoxContainer" unique_id=558733183]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 10
@@ -198,6 +244,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_6ergh")
 text = "1000P"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="stage_5_1" type="Button" parent="TabContainer/Mundo 1/VBoxContainer/MarginContainer5" unique_id=1331489887]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_i2sjr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i2sjr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i2sjr")
 
 [node name="VBoxContainer2" type="HBoxContainer" parent="TabContainer/Mundo 1" unique_id=697478169]
 visible = false
@@ -271,14 +323,14 @@ offset_bottom = 128.0
 theme_override_constants/separation = 6
 alignment = 1
 
-[node name="level1" type="VBoxContainer" parent="TabContainer/Mundo 2/VBoxContainer" unique_id=2050059960]
+[node name="stage_1_2" type="VBoxContainer" parent="TabContainer/Mundo 2/VBoxContainer" unique_id=2050059960]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 theme_override_constants/separation = 0
 
-[node name="number" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level1" unique_id=240438762]
+[node name="number" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/stage_1_2" unique_id=240438762]
 z_index = 1
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
@@ -290,7 +342,7 @@ text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="points" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level1" unique_id=681630281]
+[node name="points" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/stage_1_2" unique_id=681630281]
 z_index = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -302,14 +354,14 @@ text = "1000P"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level2" type="VBoxContainer" parent="TabContainer/Mundo 2/VBoxContainer" unique_id=297528012]
+[node name="stage_2_2" type="VBoxContainer" parent="TabContainer/Mundo 2/VBoxContainer" unique_id=297528012]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 theme_override_constants/separation = 0
 
-[node name="number" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level2" unique_id=2124603419]
+[node name="number" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/stage_2_2" unique_id=2124603419]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_vertical = 1
@@ -320,7 +372,7 @@ text = "2"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="points" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level2" unique_id=1958380867]
+[node name="points" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/stage_2_2" unique_id=1958380867]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 10
@@ -331,14 +383,14 @@ text = "1000P"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level3" type="VBoxContainer" parent="TabContainer/Mundo 2/VBoxContainer" unique_id=848001424]
+[node name="stage_3_2" type="VBoxContainer" parent="TabContainer/Mundo 2/VBoxContainer" unique_id=848001424]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 theme_override_constants/separation = 0
 
-[node name="number" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level3" unique_id=126916380]
+[node name="number" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/stage_3_2" unique_id=126916380]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_vertical = 1
@@ -349,7 +401,7 @@ text = "3"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="points" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level3" unique_id=278571589]
+[node name="points" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/stage_3_2" unique_id=278571589]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 10
@@ -360,14 +412,14 @@ text = "1000P"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level4" type="VBoxContainer" parent="TabContainer/Mundo 2/VBoxContainer" unique_id=806212359]
+[node name="stage_4_2" type="VBoxContainer" parent="TabContainer/Mundo 2/VBoxContainer" unique_id=806212359]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 theme_override_constants/separation = 0
 
-[node name="number" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level4" unique_id=2143732222]
+[node name="number" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/stage_4_2" unique_id=2143732222]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_vertical = 1
@@ -378,7 +430,7 @@ text = "4"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="points" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level4" unique_id=1702675327]
+[node name="points" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/stage_4_2" unique_id=1702675327]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 10
@@ -389,14 +441,14 @@ text = "1000P"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level5" type="VBoxContainer" parent="TabContainer/Mundo 2/VBoxContainer" unique_id=812139417]
+[node name="stage_5_2" type="VBoxContainer" parent="TabContainer/Mundo 2/VBoxContainer" unique_id=812139417]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 theme_override_constants/separation = 0
 
-[node name="number" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level5" unique_id=467385109]
+[node name="number" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/stage_5_2" unique_id=467385109]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_vertical = 1
@@ -407,7 +459,7 @@ text = "5"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="points" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/level5" unique_id=1229456622]
+[node name="points" type="Label" parent="TabContainer/Mundo 2/VBoxContainer/stage_5_2" unique_id=1229456622]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 10
@@ -432,14 +484,14 @@ offset_bottom = 128.0
 theme_override_constants/separation = 6
 alignment = 1
 
-[node name="level1" type="VBoxContainer" parent="TabContainer/Mundo 3/VBoxContainer" unique_id=1077692991]
+[node name="stage_1_3" type="VBoxContainer" parent="TabContainer/Mundo 3/VBoxContainer" unique_id=1077692991]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 theme_override_constants/separation = 0
 
-[node name="number" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level1" unique_id=80568207]
+[node name="number" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/stage_1_3" unique_id=80568207]
 z_index = 1
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
@@ -451,7 +503,7 @@ text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="points" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level1" unique_id=365319901]
+[node name="points" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/stage_1_3" unique_id=365319901]
 z_index = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -463,14 +515,14 @@ text = "1000P"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level2" type="VBoxContainer" parent="TabContainer/Mundo 3/VBoxContainer" unique_id=1321784039]
+[node name="stage_2_3" type="VBoxContainer" parent="TabContainer/Mundo 3/VBoxContainer" unique_id=1321784039]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 theme_override_constants/separation = 0
 
-[node name="number" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level2" unique_id=748116948]
+[node name="number" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/stage_2_3" unique_id=748116948]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_vertical = 1
@@ -481,7 +533,7 @@ text = "2"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="points" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level2" unique_id=134934956]
+[node name="points" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/stage_2_3" unique_id=134934956]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 10
@@ -492,14 +544,14 @@ text = "1000P"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level3" type="VBoxContainer" parent="TabContainer/Mundo 3/VBoxContainer" unique_id=51488964]
+[node name="stage_3_3" type="VBoxContainer" parent="TabContainer/Mundo 3/VBoxContainer" unique_id=51488964]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 theme_override_constants/separation = 0
 
-[node name="number" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level3" unique_id=1604984420]
+[node name="number" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/stage_3_3" unique_id=1604984420]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_vertical = 1
@@ -510,7 +562,7 @@ text = "3"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="points" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level3" unique_id=993314856]
+[node name="points" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/stage_3_3" unique_id=993314856]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 10
@@ -521,14 +573,14 @@ text = "1000P"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level4" type="VBoxContainer" parent="TabContainer/Mundo 3/VBoxContainer" unique_id=369036790]
+[node name="stage_4_3" type="VBoxContainer" parent="TabContainer/Mundo 3/VBoxContainer" unique_id=369036790]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 theme_override_constants/separation = 0
 
-[node name="number" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level4" unique_id=1035756276]
+[node name="number" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/stage_4_3" unique_id=1035756276]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_vertical = 1
@@ -539,7 +591,7 @@ text = "4"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="points" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level4" unique_id=203640530]
+[node name="points" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/stage_4_3" unique_id=203640530]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 10
@@ -550,14 +602,14 @@ text = "1000P"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level5" type="VBoxContainer" parent="TabContainer/Mundo 3/VBoxContainer" unique_id=292513487]
+[node name="stage_5_3" type="VBoxContainer" parent="TabContainer/Mundo 3/VBoxContainer" unique_id=292513487]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 theme_override_constants/separation = 0
 
-[node name="number" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level5" unique_id=1715479686]
+[node name="number" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/stage_5_3" unique_id=1715479686]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_vertical = 1
@@ -568,7 +620,7 @@ text = "5"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="points" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/level5" unique_id=1359932034]
+[node name="points" type="Label" parent="TabContainer/Mundo 3/VBoxContainer/stage_5_3" unique_id=1359932034]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 10
@@ -578,3 +630,18 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_6ergh")
 text = "1000P"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1780817514]
+visible = false
+position = Vector2(134, 79)
+enabled = false
+zoom = Vector2(2.15, 2.1)
+
+[connection signal="pressed" from="TabContainer/Mundo 1/VBoxContainer/MarginContainer/stage_1_1" to="TabContainer/Mundo 1/VBoxContainer/MarginContainer/stage_1_1" method="_on_pressed"]
+[connection signal="stage_clicked" from="TabContainer/Mundo 1/VBoxContainer/MarginContainer/stage_1_1" to="." method="_on_stage_clicked"]
+[connection signal="pressed" from="TabContainer/Mundo 1/VBoxContainer/MarginContainer2/stage_2_1" to="TabContainer/Mundo 1/VBoxContainer/MarginContainer2/stage_2_1" method="_on_pressed"]
+[connection signal="stage_clicked" from="TabContainer/Mundo 1/VBoxContainer/MarginContainer2/stage_2_1" to="." method="_on_stage_clicked"]
+[connection signal="pressed" from="TabContainer/Mundo 1/VBoxContainer/MarginContainer3/stage_3_1" to="TabContainer/Mundo 1/VBoxContainer/MarginContainer3/stage_3_1" method="_on_pressed"]
+[connection signal="stage_clicked" from="TabContainer/Mundo 1/VBoxContainer/MarginContainer3/stage_3_1" to="." method="_on_stage_clicked"]
+[connection signal="pressed" from="TabContainer/Mundo 1/VBoxContainer/MarginContainer4/stage_4_1" to="TabContainer/Mundo 1/VBoxContainer/MarginContainer4/stage_4_1" method="_on_pressed"]
+[connection signal="stage_clicked" from="TabContainer/Mundo 1/VBoxContainer/MarginContainer4/stage_4_1" to="." method="_on_stage_clicked"]

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bw7ab2biyag6m" path="res://Assets/Cave Tileset/Dungeon Tile Set/Dungeon Tile Set.png" id="1_vfskp"]
 [ext_resource type="PackedScene" path="res://scenes/MainMenu.tscn" id="2_7hcs8"]
 [ext_resource type="PackedScene" uid="uid://cnu8sw6q63xga" path="res://stage_components/number_crystal.tscn" id="3_7hcs8"]
+[ext_resource type="PackedScene" uid="uid://exng7ffepn5k" path="res://scenes/stage_selection_menu.tscn" id="3_yj20m"]
 [ext_resource type="Texture2D" uid="uid://c2nngl0g5dvfo" path="res://Assets/character_assets/player/MiniVillagerMan.png" id="4_sb6w7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sb6w7"]
@@ -386,6 +387,14 @@ offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="stage_selection_menu" parent="CanvasLayer" unique_id=475814511 instance=ExtResource("3_yj20m")]
+visible = false
+offset_left = 122.00001
+offset_top = 77.0
+offset_right = 122.0
+offset_bottom = 77.0
+scale = Vector2(1.2, 1.2)
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=844177976]
 position = Vector2(629, 203)
 zoom = Vector2(1.5, 1.5)
@@ -400,3 +409,5 @@ position = Vector2(534.00006, 205.00002)
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_ofrqx")
 autoplay = "default"
+
+[connection signal="on_jogar" from="CanvasLayer/MainMenu" to="CanvasLayer/stage_selection_menu" method="_on_main_menu_on_jogar"]
