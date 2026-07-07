@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bhoumxvwo8cdy"]
+
+[ext_resource type="Script" uid="uid://diocjt8tmn48f" path="res://scripts/stage_panel.gd" id="1_0y342"]
+[ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="2_pjyl1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sqff4"]
+content_margin_left = 4.0
+content_margin_top = 5.0
+content_margin_right = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 5
+
+[node name="stage_1" type="VBoxContainer" unique_id=171826288]
+script = ExtResource("1_0y342")
+
+[node name="Button" type="Button" parent="." unique_id=2023910397]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_pjyl1")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_sqff4")
+text = "1"
+
+[node name="score_label" type="Label" parent="." unique_id=1472918474]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pjyl1")
+theme_override_font_sizes/font_size = 11
+text = "Recorde 100000"
+horizontal_alignment = 1
+autowrap_mode = 2

@@ -1,10 +1,138 @@
-[gd_scene load_steps=2 format=4]
+[gd_scene format=3 uid="uid://b0c8y8tlanumm"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1"]
+[ext_resource type="Script" uid="uid://bgah20ae1a826" path="res://scripts/main_menu.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="2_0ykhv"]
+[ext_resource type="Texture2D" uid="uid://cckjtycg0pe72" path="res://Assets/character_assets/player/MiniNobleMan.png" id="3_ow34m"]
+[ext_resource type="Texture2D" uid="uid://6p153xga50be" path="res://Assets/item_assets/PalisadesItemSet_0.1 x1.png" id="4_l72w3"]
 
-[node name="MainMenu" type="Control"]
+[sub_resource type="Animation" id="Animation_2nypq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("coin_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(467, 159)]
+}
+
+[sub_resource type="Animation" id="Animation_bky6r"]
+resource_name = "coin_animation"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("coin_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.4),
+"transitions": PackedFloat32Array(1.319509, 1, 1),
+"update": 0,
+"values": [Vector2(467, 159), Vector2(467, 145), Vector2(467, 159)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l4mxc"]
+_data = {
+&"RESET": SubResource("Animation_2nypq"),
+&"coin_animation": SubResource("Animation_bky6r")
+}
+
+[sub_resource type="Animation" id="Animation_ow34m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_l72w3"]
+resource_name = "character_default"
+length = 0.56666666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_826wr"]
+_data = {
+&"RESET": SubResource("Animation_ow34m"),
+&"character_default": SubResource("Animation_l72w3")
+}
+
+[node name="MainMenu" type="Control" unique_id=1478242746]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1")
+
+[node name="characters_button" type="Button" parent="." unique_id=967230616]
+custom_minimum_size = Vector2(140, 23)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 190.0
+offset_right = 180.0
+offset_bottom = 214.0
+theme_override_fonts/font = ExtResource("2_0ykhv")
+text = "Personagens"
+
+[node name="power_button" type="Button" parent="." unique_id=1505317439]
+custom_minimum_size = Vector2(140, 23)
+layout_mode = 0
+offset_left = 396.0
+offset_top = 190.0
+offset_right = 536.0
+offset_bottom = 213.0
+theme_override_fonts/font = ExtResource("2_0ykhv")
+text = "Power Ups"
+
+[node name="coin_sprite" type="Sprite2D" parent="." unique_id=834026138]
+position = Vector2(467, 159)
+scale = Vector2(3, 3)
+texture = ExtResource("4_l72w3")
+region_enabled = true
+region_rect = Rect2(1, 417, 14, 14)
+
+[node name="coin_anim_player" type="AnimationPlayer" parent="." unique_id=1633147757]
+libraries/ = SubResource("AnimationLibrary_l4mxc")
+autoplay = &"coin_animation"
+
+[node name="character_sprite" type="Sprite2D" parent="." unique_id=772053776]
+position = Vector2(111, 160)
+scale = Vector2(3, 3)
+texture = ExtResource("3_ow34m")
+hframes = 6
+region_enabled = true
+region_rect = Rect2(0, 17, 192, 15)
+
+[node name="charac_anim_player" type="AnimationPlayer" parent="." unique_id=1280241638]
+root_node = NodePath("../character_sprite")
+libraries/ = SubResource("AnimationLibrary_826wr")
+autoplay = &"character_default"
+
+[connection signal="pressed" from="characters_button" to="." method="_on_characters_button_pressed"]
+[connection signal="pressed" from="power_button" to="." method="_on_power_button_pressed"]

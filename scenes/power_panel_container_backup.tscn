@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ckkg8s8m0kxbm"]
+
+[ext_resource type="Script" uid="uid://cd4bpdwrpo63d" path="res://scripts/store_power_panel.gd" id="1_mxgcm"]
+[ext_resource type="Texture2D" uid="uid://6p153xga50be" path="res://Assets/item_assets/PalisadesItemSet_0.1 x1.png" id="2_fxdrr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kd0y"]
+atlas = ExtResource("2_fxdrr")
+region = Rect2(64, 256, 16, 16)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0px8s"]
+bg_color = Color(0.003921569, 0.003921569, 0.003921569, 0.12156863)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[node name="PanelContainer" type="MarginContainer" unique_id=144100464]
+custom_minimum_size = Vector2(50, 50)
+script = ExtResource("1_mxgcm")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=899176488]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_6kd0y")
+
+[node name="Button" type="Button" parent="." unique_id=1113208139]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_0px8s")

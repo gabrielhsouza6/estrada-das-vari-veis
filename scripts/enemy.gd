@@ -30,12 +30,12 @@ func _process(delta: float) -> void:
 		animated_sprite.flip_h = false
 	
 	position.x += direction * delta * speed
-	if name == "ghost":
-		print("left_arrow: " + str(left_arrow.is_colliding()))
-		print("right_arrow: " + str(right_arrow.is_colliding()))
-		print(direction)
-		print("attacking: " + str(attacking))
-		print("------------------")
+	#if name == "ghost":
+		#print("left_arrow: " + str(left_arrow.is_colliding()))
+		#print("right_arrow: " + str(right_arrow.is_colliding()))
+		#print(direction)
+		#print("attacking: " + str(attacking))
+		#print("------------------")
 	
 func attack() -> void:
 	if has_overlapping_bodies():

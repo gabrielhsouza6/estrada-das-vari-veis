@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://53hkf8dqfvfw"]
+
+[ext_resource type="Script" uid="uid://etqa3no11613" path="res://scripts/store_character_panel.gd" id="1_ycoih"]
+[ext_resource type="Texture2D" uid="uid://cckjtycg0pe72" path="res://Assets/character_assets/player/MiniNobleMan.png" id="2_8otq1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upscj"]
+atlas = ExtResource("2_8otq1")
+region = Rect2(6, 47, 20, 19)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0px8s"]
+bg_color = Color(0.003921569, 0.003921569, 0.003921569, 0.12156863)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[node name="PanelContainer" type="MarginContainer" unique_id=1544475829]
+custom_minimum_size = Vector2(50, 50)
+script = ExtResource("1_ycoih")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1200789046]
+layout_mode = 2
+texture = SubResource("AtlasTexture_upscj")
+
+[node name="Button" type="Button" parent="." unique_id=19954255]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_0px8s")

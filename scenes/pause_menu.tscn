@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://bi6diuv8pgwp7"]
+
+[ext_resource type="Script" uid="uid://c1t0jmohhxxky" path="res://scripts/pause_menu.gd" id="1_myx47"]
+[ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="1_n87rw"]
+[ext_resource type="PackedScene" uid="uid://cp8mkudg52hi4" path="res://scenes/options_menu.tscn" id="3_kukqi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myx47"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kukqi"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d2l8"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7l7mv"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4r4p"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1s2dm"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_88e76"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="pause_menu" type="Control" unique_id=1005875332]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_myx47")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1574675548]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 209.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_myx47")
+
+[node name="pause" type="VBoxContainer" parent="PanelContainer" unique_id=926081073]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="PanelContainer/pause" unique_id=507139859]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_n87rw")
+theme_override_font_sizes/font_size = 19
+text = "Jogo Pausado"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="resume" type="Button" parent="PanelContainer/pause" unique_id=1057900972]
+custom_minimum_size = Vector2(120, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_n87rw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kukqi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5d2l8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7l7mv")
+text = "Continuar"
+
+[node name="restart" type="Button" parent="PanelContainer/pause" unique_id=2133096162]
+custom_minimum_size = Vector2(120, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_n87rw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v4r4p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1s2dm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_88e76")
+text = "Resetar"
+
+[node name="options" type="Button" parent="PanelContainer/pause" unique_id=1575301986]
+custom_minimum_size = Vector2(120, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_n87rw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v4r4p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1s2dm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_88e76")
+text = "Opcoes"
+
+[node name="exit_to_menu" type="Button" parent="PanelContainer/pause" unique_id=1222771299]
+custom_minimum_size = Vector2(120, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_n87rw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v4r4p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1s2dm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_88e76")
+text = "Sair para Menu"
+
+[node name="options" parent="PanelContainer" unique_id=142645188 instance=ExtResource("3_kukqi")]
+visible = false
+layout_mode = 2
+
+[connection signal="pressed" from="PanelContainer/pause/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/pause/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/pause/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="PanelContainer/pause/exit_to_menu" to="." method="_on_exit_to_menu_pressed"]
+
+[editable path="PanelContainer/options"]

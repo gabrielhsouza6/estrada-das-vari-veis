@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://cp8mkudg52hi4"]
+
+[ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="1_liyum"]
+
+[node name="options" type="VBoxContainer" unique_id=142645188]
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="." unique_id=564286153]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_liyum")
+theme_override_font_sizes/font_size = 19
+text = "Opcoes"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="music" type="HBoxContainer" parent="." unique_id=59607848]
+custom_minimum_size = Vector2(135, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="music" unique_id=900976320]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_liyum")
+theme_override_font_sizes/font_size = 15
+text = "Musica"
+
+[node name="music_slider" type="HSlider" parent="music" unique_id=700549586]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="sfx" type="HBoxContainer" parent="." unique_id=872596182]
+custom_minimum_size = Vector2(135, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="sfx" unique_id=1255144401]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_liyum")
+theme_override_font_sizes/font_size = 15
+text = "SFX"
+
+[node name="sfx_slider" type="HSlider" parent="sfx" unique_id=624618351]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="fullscreen" type="HBoxContainer" parent="." unique_id=1102126497]
+custom_minimum_size = Vector2(135, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="fullscreen" unique_id=1593251346]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_liyum")
+theme_override_font_sizes/font_size = 15
+text = "Tela Cheia"
+
+[node name="fullscreen_button" type="CheckButton" parent="fullscreen" unique_id=913951162]
+layout_mode = 2
+size_flags_vertical = 4
+icon_alignment = 1
+
+[node name="Container" type="Container" parent="." unique_id=401345224]
+layout_mode = 2
+
+[node name="voltar_pause" type="Button" parent="." unique_id=380780968]
+custom_minimum_size = Vector2(80, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_liyum")
+text = "Voltar"

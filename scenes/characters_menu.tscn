@@ -1,0 +1,202 @@
+[gd_scene format=3 uid="uid://bhn2qs6et04w5"]
+
+[ext_resource type="Script" uid="uid://do8asrsnbnkau" path="res://scripts/character_menu.gd" id="1_oa7fa"]
+[ext_resource type="Script" uid="uid://bdppic3bg1tdl" path="res://scripts/char_selec_exhibition_container.gd" id="1_yhhk6"]
+[ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="2_oa7fa"]
+[ext_resource type="Script" uid="uid://l0gnd2oxnmom" path="res://scripts/exhib_grid.gd" id="3_jnhs4"]
+[ext_resource type="Texture2D" uid="uid://bxjcc5yy7s08e" path="res://Assets/gui_assets/Stone_UI_Sprite_Sheet.png" id="7_jnhs4"]
+
+[sub_resource type="Animation" id="Animation_sx2kr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_c7s3y"]
+resource_name = "character_default"
+length = 0.73333335
+loop_mode = 1
+step = 0.033
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xr80s"]
+_data = {
+&"RESET": SubResource("Animation_sx2kr"),
+&"character_default": SubResource("Animation_c7s3y")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0i4xx"]
+content_margin_left = 4.0
+content_margin_top = 5.0
+content_margin_right = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_midjc"]
+content_margin_left = 4.0
+content_margin_top = 5.0
+content_margin_right = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sy14s"]
+content_margin_left = 4.0
+content_margin_top = 5.0
+content_margin_right = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6sf53"]
+content_margin_left = 4.0
+content_margin_top = 5.0
+content_margin_right = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0arrr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i0eny"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xr80s"]
+bg_color = Color(0, 0, 0, 0.7372549)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i4xx"]
+atlas = ExtResource("7_jnhs4")
+region = Rect2(1, 97, 14, 13)
+
+[node name="characters_menu" type="Control" unique_id=1012051021]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oa7fa")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1770745215]
+layout_mode = 0
+offset_right = 353.0
+offset_bottom = 226.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=2109700549]
+custom_minimum_size = Vector2(340, 215)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="ExhibitionContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=79596383]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+script = ExtResource("1_yhhk6")
+
+[node name="Container" type="Container" parent="PanelContainer/HBoxContainer/ExhibitionContainer" unique_id=1764022592]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/ExhibitionContainer" unique_id=1945290070]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelContainer/HBoxContainer/ExhibitionContainer/PanelContainer" unique_id=1112112017]
+position = Vector2(62, 65)
+scale = Vector2(3, 3)
+hframes = 6
+region_enabled = true
+region_rect = Rect2(0, 47, 192, 19)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PanelContainer/HBoxContainer/ExhibitionContainer/PanelContainer" unique_id=157924352]
+root_node = NodePath("../Sprite2D")
+libraries/ = SubResource("AnimationLibrary_xr80s")
+autoplay = &"character_default"
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/ExhibitionContainer" unique_id=346657297]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_oa7fa")
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Container2" type="Container" parent="PanelContainer/HBoxContainer/ExhibitionContainer" unique_id=688255708]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/HBoxContainer/ExhibitionContainer" unique_id=102781973]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_oa7fa")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_0i4xx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_midjc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sy14s")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6sf53")
+flat = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/HBoxContainer" unique_id=1995164715]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/HBoxContainer/ScrollContainer" unique_id=1814334528]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 8
+columns = 3
+script = ExtResource("3_jnhs4")
+
+[node name="Exit" type="Button" parent="." unique_id=1340044469]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 3.0
+offset_right = 372.0
+offset_bottom = 16.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("2_oa7fa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0arrr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i0eny")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xr80s")
+icon = SubResource("AtlasTexture_0i4xx")
+icon_alignment = 1
+
+[connection signal="pressed" from="PanelContainer/HBoxContainer/ExhibitionContainer/Button" to="PanelContainer/HBoxContainer/ExhibitionContainer" method="_on_button_pressed"]
+[connection signal="change_exhib" from="PanelContainer/HBoxContainer/ScrollContainer/GridContainer" to="PanelContainer/HBoxContainer/ExhibitionContainer" method="_on_grid_container_change_exhib"]
+[connection signal="child_entered_tree" from="PanelContainer/HBoxContainer/ScrollContainer/GridContainer" to="PanelContainer/HBoxContainer/ScrollContainer/GridContainer" method="_on_child_entered_tree"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

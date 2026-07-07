@@ -1,6 +1,10 @@
 extends Control
 
 signal on_jogar
+signal on_loja
+signal on_personagens
+signal on_powerups
+signal on_opcoes
 
 const GAME_SCENE := "res://scenes/stage_selection_menu.tscn"
 const FONT_PATH := "res://fonts/Minecraft.ttf"
@@ -9,6 +13,7 @@ const PLAYER_PATH := "res://Assets/character_assets/player/MiniWorker.png"
 var pixel_font: FontFile
 
 func _ready() -> void:
+	GameManager.connect("character_changed", update_character)
 	pixel_font = load(FONT_PATH)
 	create_menu()
 
@@ -31,19 +36,27 @@ func create_menu() -> void:
 	var jogar := create_button("Jogar")
 	jogar.pressed.connect(_on_jogar_pressed)
 	menu.add_child(jogar)
-
-	menu.add_child(create_button("Loja"))
-	menu.add_child(create_button("Opcoes"))
+	
+	var loja := create_button("Loja")
+	loja.pressed.connect(_on_loja_pressed)
+	menu.add_child(loja)
+	
+	var opcoes:= create_button("Opcoes")
+	opcoes.pressed.connect(_on_opcoes_pressed)
+	menu.add_child(opcoes)
+	
 
 	var sair := create_button("Sair")
 	sair.pressed.connect(_on_sair_pressed)
 	menu.add_child(sair)
+	
+	update_character()
 
-	# Lado esquerdo - personagem acima do texto
+	## Lado esquerdo - personagem acima do texto
 	#add_character(Vector2(105, 188))
 	#add_shadow_text("Personagens", Vector2(28, 232), Vector2(160, 30), 17)
-#
-	## Lado direito - power-up acima do texto
+##
+	### Lado direito - power-up acima do texto
 	#add_power_icon(Vector2(438, 185))
 	#add_shadow_text("Power-ups", Vector2(388, 232), Vector2(160, 30), 17)
 
@@ -93,7 +106,7 @@ func create_button(texto: String) -> Button:
 	#sprite.region_enabled = true
 	#sprite.region_rect = Rect2(0, 0, 16, 16)
 	#add_child(sprite)
-
+#
 #func add_power_icon(pos: Vector2) -> void:
 	#var shadow := Label.new()
 	#shadow.text = "⚡"
@@ -114,6 +127,9 @@ func create_button(texto: String) -> Button:
 	#icon.add_theme_color_override("font_color", Color.YELLOW)
 	#icon.add_theme_font_size_override("font_size", 42)
 	#add_child(icon)
+	
+func update_character() -> void:
+	$character_sprite.texture = load("res://Assets/character_assets/player/" + GameManager.current_character.get("tag") + ".png")
 
 func _on_jogar_pressed() -> void:
 	visible = false
@@ -122,3 +138,34 @@ func _on_jogar_pressed() -> void:
 
 func _on_sair_pressed() -> void:
 	get_tree().quit()
+	
+func _on_loja_pressed() -> void:
+	visible = false
+	on_loja.emit()
+	
+func _on_opcoes_pressed() -> void:
+	visible = false
+	on_opcoes.emit()
+
+func _on_store_menu_exited_loja() -> void:
+	visible = true
+
+func _on_characters_button_pressed() -> void:
+	visible = false
+	on_personagens.emit()
+	
+func _on_power_button_pressed() -> void:
+	visible = false
+	on_powerups.emit()
+
+func _on_characters_menu_exit_characters() -> void:
+	visible = true
+
+func _on_powerups_menu_exit_powerups() -> void:
+	visible = true
+	
+func _on_voltar_opcoes_pressed() -> void:
+	visible = true
+
+func _on_stage_selection_menu_exit_stages() -> void:
+	visible = true

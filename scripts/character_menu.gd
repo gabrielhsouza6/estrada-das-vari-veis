@@ -1,10 +1,30 @@
-extends TabBar
+extends Control
 
-@onready var grid_container: GridContainer = $HBoxContainer/ScrollContainer/GridContainer
+signal exit_characters
+
+@onready var grid_container: GridContainer = $PanelContainer/HBoxContainer/ScrollContainer/GridContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for character in Database.characters:
+	GameManager.connect("character_bought", update_list)
+	update_list()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+	
+func _on_exit_pressed() -> void:
+	visible = false
+	exit_characters.emit()
+
+func _on_main_menu_on_personagens() -> void:
+	visible = true
+	
+func update_list() -> void:
+	for child in grid_container.get_children():
+		grid_container.remove_child(child)
+	
+	for character in Database.player_characters:
 		var new_node = MarginContainer.new()
 		new_node.custom_minimum_size.x = 50
 		new_node.custom_minimum_size.y = 50
@@ -27,8 +47,3 @@ func _ready() -> void:
 		new_node.set_script(load("res://scripts/store_character_panel.gd"))
 		new_node.data = character
 		grid_container.add_child(new_node)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
