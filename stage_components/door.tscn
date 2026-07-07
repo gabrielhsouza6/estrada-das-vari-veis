@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://m6difs8iq4gy"]
 
 [ext_resource type="Script" uid="uid://2vl82p80rsu4" path="res://scripts/door.gd" id="1_k3nfx"]
-[ext_resource type="Texture2D" uid="uid://bw7ab2biyag6m" path="res://Assets/Cave Tileset/Dungeon Tile Set/Dungeon Tile Set.png" id="2_qfn55"]
+[ext_resource type="Texture2D" uid="uid://bw7ab2biyag6m" path="res://Assets/stage_assets/Dungeon Tile Set.png" id="2_qfn55"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gxl0"]
 size = Vector2(18, 32)

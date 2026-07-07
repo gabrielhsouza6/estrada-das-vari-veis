@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bqtmoyjasko2x"]
 
-[ext_resource type="Texture2D" uid="uid://bw7ab2biyag6m" path="res://Assets/Cave Tileset/Dungeon Tile Set/Dungeon Tile Set.png" id="1_gvt4e"]
-[ext_resource type="Script" uid="uid://cwv5capvgrum0" path="res://scripts/end_stage_signs.gd" id="1_sqc6i"]
+[ext_resource type="Texture2D" uid="uid://bw7ab2biyag6m" path="res://Assets/stage_assets/Dungeon Tile Set.png" id="1_gvt4e"]
+[ext_resource type="Script" uid="uid://cwv5capvgrum0" path="res://scripts/stage.gd" id="1_sqc6i"]
 [ext_resource type="PackedScene" uid="uid://clqsk338bwn6b" path="res://entities/player.tscn" id="2_8rw01"]
 [ext_resource type="PackedScene" uid="uid://b0y1vwgpuqigy" path="res://stage_components/label_sign.tscn" id="3_8rw01"]
 [ext_resource type="PackedScene" uid="uid://cnu8sw6q63xga" path="res://stage_components/number_crystal.tscn" id="4_k1ehm"]
@@ -462,3 +462,5 @@ position = Vector2(1112, 192)
 
 [node name="right_door" parent="Doors" unique_id=1877898037 instance=ExtResource("7_otndh")]
 position = Vector2(1208, 193)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1462868373]

@@ -16,4 +16,5 @@ func _process(delta: float) -> void:
 	
 func _load_stage() -> void:
 	print("loadind stage: " + data.get("tag"))
+	GameManager.current_stage = data
 	get_tree().change_scene_to_file("res://scenes/" + data.get("tag") + ".tscn")

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c5jfy23txvuk0" path="res://scripts/stage_selection_menu.gd" id="1_i2sjr"]
 [ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="1_pblkw"]
 [ext_resource type="Texture2D" uid="uid://bxjcc5yy7s08e" path="res://Assets/gui_assets/Stone_UI_Sprite_Sheet.png" id="2_sqff4"]
+[ext_resource type="Script" uid="uid://c1glj58u4xnb6" path="res://scripts/exit_button.gd" id="4_6ergh"]
 [ext_resource type="PackedScene" uid="uid://bhoumxvwo8cdy" path="res://scenes/stage_panel.tscn" id="4_i2sjr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ergh"]
@@ -150,6 +151,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_5f2co")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g2cul")
 icon = SubResource("AtlasTexture_api74")
 icon_alignment = 1
+script = ExtResource("4_6ergh")
 
 [node name="stage_panel" parent="." unique_id=171826288 instance=ExtResource("4_i2sjr")]
 visible = false

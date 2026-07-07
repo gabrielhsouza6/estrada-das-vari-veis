@@ -4,7 +4,7 @@ var characters = [
 	{
 		"name": "Noble Man",
 		"tag": "MiniNobleMan",
-		"price": 20000
+		"price": 20000,
 	},
 	{
 		"name": "Noble Woman",

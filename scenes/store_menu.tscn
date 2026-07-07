@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://3vq6gfmveux3" path="res://scripts/power_store_tab.gd" id="7_0px8s"]
 [ext_resource type="Texture2D" uid="uid://bxjcc5yy7s08e" path="res://Assets/gui_assets/Stone_UI_Sprite_Sheet.png" id="8_6kd0y"]
 [ext_resource type="Script" uid="uid://dvi1i5o36bqoo" path="res://scripts/power_exhibition_container.gd" id="8_7hek3"]
+[ext_resource type="Script" uid="uid://c1glj58u4xnb6" path="res://scripts/exit_button.gd" id="9_6kd0y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xa5r"]
 content_margin_left = 0.0
@@ -378,6 +379,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_6kd0y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0pox8")
 icon = SubResource("AtlasTexture_0px8s")
 icon_alignment = 1
+script = ExtResource("9_6kd0y")
 
 [node name="points_label" type="Label" parent="." unique_id=1705798217]
 layout_mode = 0

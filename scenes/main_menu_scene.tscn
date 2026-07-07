@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://d3oxjgstg3d1d"]
 
-[ext_resource type="Texture2D" uid="uid://bw7ab2biyag6m" path="res://Assets/Cave Tileset/Dungeon Tile Set/Dungeon Tile Set.png" id="1_vfskp"]
+[ext_resource type="Texture2D" uid="uid://bw7ab2biyag6m" path="res://Assets/stage_assets/Dungeon Tile Set.png" id="1_vfskp"]
 [ext_resource type="PackedScene" uid="uid://b0c8y8tlanumm" path="res://scenes/MainMenu.tscn" id="2_7hcs8"]
 [ext_resource type="PackedScene" uid="uid://cnu8sw6q63xga" path="res://stage_components/number_crystal.tscn" id="3_7hcs8"]
 [ext_resource type="PackedScene" uid="uid://exng7ffepn5k" path="res://scenes/stage_selection_menu.tscn" id="3_yj20m"]

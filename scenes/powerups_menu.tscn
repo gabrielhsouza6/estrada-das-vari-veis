@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="3_ksqoo"]
 [ext_resource type="Script" uid="uid://l0gnd2oxnmom" path="res://scripts/exhib_grid.gd" id="4_hlrt2"]
 [ext_resource type="Texture2D" uid="uid://bxjcc5yy7s08e" path="res://Assets/gui_assets/Stone_UI_Sprite_Sheet.png" id="5_k6ctp"]
+[ext_resource type="Script" uid="uid://c1glj58u4xnb6" path="res://scripts/exit_button.gd" id="6_n8ove"]
 
 [sub_resource type="Animation" id="Animation_0px8s"]
 length = 0.001
@@ -204,6 +205,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_rwsqh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_eolw6")
 icon = SubResource("AtlasTexture_6jfct")
 icon_alignment = 1
+script = ExtResource("6_n8ove")
 
 [connection signal="pressed" from="PanelContainer/HBoxContainer/ExhibitionContainer/Button" to="PanelContainer/HBoxContainer/ExhibitionContainer" method="_on_button_pressed"]
 [connection signal="change_exhib" from="PanelContainer/HBoxContainer/ScrollContainer/GridContainer" to="PanelContainer/HBoxContainer/ExhibitionContainer" method="_on_grid_container_change_exhib"]

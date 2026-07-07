@@ -43,6 +43,7 @@ func _on_options_pressed() -> void:
 
 func _on_exit_to_menu_pressed() -> void:
 	get_tree().paused = false
+	GameManager.reset_stage_status()
 	get_tree().change_scene_to_file("res://scenes/main_menu_scene.tscn")
 	exit_to_menu.emit()
 

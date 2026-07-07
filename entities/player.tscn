@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d0gnytvddhkum" path="res://gui_components/health_bar.tscn" id="3_e4p34"]
 [ext_resource type="PackedScene" uid="uid://bi6diuv8pgwp7" path="res://scenes/pause_menu.tscn" id="4_qly61"]
 [ext_resource type="PackedScene" uid="uid://cjjtoin8r4y" path="res://gui_components/points_counter.tscn" id="4_rfe5m"]
+[ext_resource type="PackedScene" uid="uid://7i6scysnmwxr" path="res://scenes/end_stage_menu.tscn" id="5_qsoyl"]
 
 [sub_resource type="GDScript" id="GDScript_b0kkn"]
 script/source = "extends CharacterBody2D
@@ -386,6 +387,9 @@ offset_left = 213.0
 offset_top = 63.0
 offset_right = 213.0
 offset_bottom = 63.0
+
+[node name="end_stage_menu" parent="CanvasLayer" unique_id=1854757972 instance=ExtResource("5_qsoyl")]
+visible = false
 
 [node name="player_anim" type="AnimationPlayer" parent="." unique_id=1323448932]
 libraries/ = SubResource("AnimationLibrary_qly61")
