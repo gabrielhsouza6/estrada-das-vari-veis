@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://43dgfyj5h5x5"]
 
-[ext_resource type="Script" uid="uid://cwv5capvgrum0" path="res://scripts/stage.gd" id="1_uvaki"]
+[ext_resource type="Script" uid="uid://cwv5capvgrum0" path="res://scripts/number_stages.gd" id="1_uvaki"]
 [ext_resource type="Texture2D" uid="uid://bw7ab2biyag6m" path="res://Assets/stage_assets/Dungeon Tile Set.png" id="2_6s0v2"]
 [ext_resource type="PackedScene" uid="uid://clqsk338bwn6b" path="res://entities/player.tscn" id="3_d7ejb"]
 [ext_resource type="PackedScene" uid="uid://b0y1vwgpuqigy" path="res://stage_components/label_sign.tscn" id="4_n2c0y"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bvqukwi13qsee" path="res://entities/ghost.tscn" id="10_7eiid"]
 [ext_resource type="PackedScene" uid="uid://vb60y5hcsrvx" path="res://stage_components/barrier.tscn" id="11_3kfah"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odu82"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uvaki"]
 texture = ExtResource("2_6s0v2")
 1:1/0 = 0
 2:1/0 = 0
@@ -149,9 +149,9 @@ texture = ExtResource("2_6s0v2")
 12:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_hq886"]
-sources/0 = SubResource("TileSetAtlasSource_odu82")
+sources/0 = SubResource("TileSetAtlasSource_uvaki")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ybxax"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6s0v2"]
 texture = ExtResource("2_6s0v2")
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -332,7 +332,7 @@ texture = ExtResource("2_6s0v2")
 
 [sub_resource type="TileSet" id="TileSet_6eruw"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_ybxax")
+sources/0 = SubResource("TileSetAtlasSource_6s0v2")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mhi0"]
 size = Vector2(43, 14.75)
@@ -552,3 +552,9 @@ position = Vector2(1234, 149)
 
 [node name="Barrier14" parent="Barriers" unique_id=569305433 instance=ExtResource("11_3kfah")]
 position = Vector2(1234, 126)
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=266073398]
+stream = ExtResource("6_wxcyk")
+volume_db = -16.421
+autoplay = true
+bus = &"Music"

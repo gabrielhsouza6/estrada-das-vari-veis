@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bqtmoyjasko2x"]
 
-[ext_resource type="Script" uid="uid://cwv5capvgrum0" path="res://scripts/stage.gd" id="1_w1jic"]
+[ext_resource type="Script" uid="uid://cwv5capvgrum0" path="res://scripts/number_stages.gd" id="1_w1jic"]
 [ext_resource type="Texture2D" uid="uid://bw7ab2biyag6m" path="res://Assets/stage_assets/Dungeon Tile Set.png" id="2_cq4rj"]
 [ext_resource type="PackedScene" uid="uid://clqsk338bwn6b" path="res://entities/player.tscn" id="3_hq4gw"]
 [ext_resource type="PackedScene" uid="uid://b0y1vwgpuqigy" path="res://stage_components/label_sign.tscn" id="4_13ntv"]
@@ -356,7 +356,7 @@ tile_set = SubResource("TileSet_2l7rc")
 position = Vector2(36.000004, 309)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1745837013]
-position = Vector2(130.40001, -60.8)
+position = Vector2(68, -57.6)
 zoom = Vector2(1.25, 1.25)
 limit_left = -50
 limit_top = 50
@@ -460,7 +460,6 @@ position = Vector2(1112, 192)
 position = Vector2(1208, 193)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1462868373]
-process_mode = 3
 stream = ExtResource("11_f8hau")
 volume_db = -16.421
 autoplay = true

@@ -87,7 +87,7 @@ var powers = [
 	{
 		"name": "Midas Touch",
 		"price": 30000,
-		"description": "Ypu gain more points per crystal!",
+		"description": "You gain more points per crystal!",
 		"texture": AtlasTexture,
 		"x": 3,
 		"y": 27,
@@ -117,12 +117,12 @@ var powers = [
 	{
 		"name": "Big Boots",
 		"price": 25000,
-		"description": "It significantly increases your speed!",
+		"description": "It increases your jump height!",
 		"texture": AtlasTexture,
 		"x": 4,
 		"y": 16,
-		"attribute": "speed",
-		"value": 1.5
+		"attribute": "jump",
+		"value": 1.2
 	},
 	{
 		"name": "Golden Shield",
@@ -149,49 +149,49 @@ var stages = [
 		"world": 1,
 		"tag": "stage_2_1",
 		"score": 0,
-		"finished": false
+		"finished": true
 	},
 	{
 		"id": 3,
 		"world": 1,
 		"tag": "stage_3_1",
 		"score": 0,
-		"finished": false
+		"finished": true
 	},
 	{
 		"id": 4,
 		"world": 1,
 		"tag": "stage_4_1",
 		"score": 0,
-		"finished": false
+		"finished": true
 	},
 	{
 		"id": 5,
 		"world": 1,
 		"tag": "stage_5_1",
 		"score": 0,
-		"finished": false
+		"finished": true
 	},
 	{
 		"id": 1,
 		"world": 2,
 		"tag": "stage_1_2",
 		"score": 0,
-		"finished": false
+		"finished": true
 	},
 	{
 		"id": 2,
 		"world": 2,
 		"tag": "stage_2_2",
 		"score": 0,
-		"finished": false
+		"finished": true
 	},
 	{
 		"id": 3,
 		"world": 2,
 		"tag": "stage_3_2",
 		"score": 0,
-		"finished": false
+		"finished": true
 	},
 	{
 		"id": 4,

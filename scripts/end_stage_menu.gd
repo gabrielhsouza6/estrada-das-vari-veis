@@ -7,6 +7,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameManager.connect("item_gained", _on_item_gained)
 	GameManager.connect("stage_finished", show_menu)
 	load_audio()
 
@@ -30,6 +31,7 @@ func _on_next_stage_pressed() -> void:
 		next_stage_id = current_stage_world + 1
 		next_stage_world = current_stage_world
 	GameManager.reset_stage_status()
+	GameManager.current_stage = GameManager.get_stage(next_stage_id, next_stage_world)
 	get_tree().change_scene_to_file("res://scenes/stages/stage_" + str(next_stage_id) + "_" + str(next_stage_world) + ".tscn")
 	
 func _on_try_again_pressed() -> void:
@@ -62,6 +64,8 @@ func _on_timer_timeout() -> void:
 	$AnimationPlayer.play("show_menu")
 	
 func load_audio() -> void:
+	$new_item_container/VBoxContainer/continue.pressed.connect(_on_click)
+	$new_item_container/VBoxContainer/continue.mouse_entered.connect(_on_hover)
 	for button in buttons_vbox.get_children():
 		button.mouse_entered.connect(_on_hover)
 		button.pressed.connect(_on_click)
@@ -71,4 +75,12 @@ func _on_hover() -> void:
 
 func _on_click() -> void:
 	$button_audio/click.play()
-		
+
+func _on_item_gained() -> void:
+	show_menu()
+	$MarginContainer.visible = false
+	$new_item_container.visible = true
+	
+func _on_continue_pressed() -> void:
+	$MarginContainer.visible = true
+	$new_item_container.visible = false

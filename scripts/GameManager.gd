@@ -7,6 +7,7 @@ signal character_bought
 signal powerup_bought
 signal character_changed
 signal stage_finished
+signal item_gained
 
 var save_path = "user://user_data.save"
 var total_points: int = 75000
@@ -33,6 +34,9 @@ func crystal_collected_emit(number: int) -> void:
 	
 func update_crystal_data() -> void:
 	update_crystals.emit()
+	
+func gained_item() -> void:
+	item_gained.emit()
 	
 func bought_character() -> void:
 	#save_data()
@@ -78,4 +82,10 @@ func load_data() -> void:
 		GameManager.current_character = file.get_var()
 		GameManager.total_points = file.get_var()
 		file.close()
+		
+func get_stage(id: int, world: int) -> Dictionary:
+	for stage in Database.stages:
+		if [stage.get("id"), stage.get("world")] == [id, world]:
+			return stage
+	return {}
 		

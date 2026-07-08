@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://cxq5vhm0yhfs0"]
+
+[ext_resource type="Script" uid="uid://bla1f5jgjh2m8" path="res://scripts/health_potion.gd" id="1_ansib"]
+[ext_resource type="Texture2D" uid="uid://6p153xga50be" path="res://Assets/item_assets/PalisadesItemSet_0.1 x1.png" id="2_hxuby"]
+[ext_resource type="AudioStream" uid="uid://dxbwwo2jwj4c0" path="res://audio/stage/JDSherbert - Pixel Game Essentials SFX Pack - Powerup 2.mp3" id="3_iag4s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dubfw"]
+radius = 6.0
+
+[sub_resource type="Animation" id="Animation_1mrvc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ms3qo"]
+resource_name = "default"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(0.2871746, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(0.2773924, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5se37"]
+_data = {
+&"RESET": SubResource("Animation_1mrvc"),
+&"default": SubResource("Animation_ms3qo")
+}
+
+[node name="health_potion" type="Area2D" unique_id=1170969852]
+scale = Vector2(1.3, 1.3)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_ansib")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=965561695]
+texture = ExtResource("2_hxuby")
+region_enabled = true
+region_rect = Rect2(35, 321, 10, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2033712098]
+shape = SubResource("CircleShape2D_dubfw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=133704491]
+stream = ExtResource("3_iag4s")
+volume_db = -16.0
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2064976163]
+libraries/ = SubResource("AnimationLibrary_5se37")
+autoplay = &"default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

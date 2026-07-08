@@ -2,16 +2,17 @@
 
 [ext_resource type="Script" uid="uid://de88mo6r1po31" path="res://scripts/end_stage_menu.gd" id="1_84ub4"]
 [ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="2_wftpo"]
+[ext_resource type="Texture2D" uid="uid://et0ekrw7ilr4" path="res://Assets/gui_assets/orb/orb_1.png" id="3_7cjix"]
 [ext_resource type="AudioStream" uid="uid://btger30ow2erp" path="res://audio/stage/JDSherbert - Pixel Game Essentials SFX Pack - Level Complete 1.mp3" id="3_wftpo"]
 [ext_resource type="AudioStream" uid="uid://c2u30gu7lwjsn" path="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Saw).mp3" id="4_af8ji"]
 [ext_resource type="AudioStream" uid="uid://c0mhunta0se0c" path="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Popup Open 1 (Saw).mp3" id="5_7cjix"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dapar"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qci3f"]
 content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.9137255)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -80,6 +81,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("new_item_container:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(198, 310)]
+}
 
 [sub_resource type="Animation" id="Animation_uti8i"]
 resource_name = "show_menu"
@@ -107,12 +120,60 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("new_item_container:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(198, 310), Vector2(198, 12)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oci20"]
 _data = {
 &"RESET": SubResource("Animation_qci3f"),
 &"show_menu": SubResource("Animation_uti8i")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uti8i"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oci20"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pi5f"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
 
 [node name="end_stage_menu" type="Control" unique_id=1854757972]
 process_mode = 3
@@ -133,7 +194,7 @@ offset_bottom = 609.9962
 
 [node name="Panel" type="Panel" parent="MarginContainer" unique_id=1046729534]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_dapar")
+theme_override_styles/panel = SubResource("StyleBoxFlat_qci3f")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=372384813]
 layout_mode = 2
@@ -253,6 +314,68 @@ stream = ExtResource("3_wftpo")
 volume_db = -22.829
 bus = &"Music"
 
+[node name="new_item_container" type="MarginContainer" parent="." unique_id=1122160060]
+visible = false
+layout_mode = 0
+offset_left = 198.0
+offset_top = 310.0
+offset_right = 378.0
+offset_bottom = 609.0
+
+[node name="Panel" type="Panel" parent="new_item_container" unique_id=1265656397]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qci3f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="new_item_container" unique_id=1287835591]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="new_item_container/VBoxContainer" unique_id=522021098]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wftpo")
+theme_override_font_sizes/font_size = 24
+text = "PARABENS"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="new_item_container/VBoxContainer" unique_id=837129767]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wftpo")
+theme_override_font_sizes/font_size = 16
+text = "Voce conquistou o
+ORBE DA LOGICA"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="new_item_container/VBoxContainer" unique_id=1434538078]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_7cjix")
+
+[node name="Label3" type="Label" parent="new_item_container/VBoxContainer" unique_id=629021758]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("2_wftpo")
+theme_override_font_sizes/font_size = 16
+text = "Se divirta agora capturando valores logicos"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="continue" type="Button" parent="new_item_container/VBoxContainer" unique_id=1521569844]
+custom_minimum_size = Vector2(125, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_wftpo")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_uti8i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oci20")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5pi5f")
+text = "Continuar"
+
 [node name="button_audio" type="Node" parent="." unique_id=1381272155]
 
 [node name="hover" type="AudioStreamPlayer" parent="button_audio" unique_id=275398204]
@@ -265,7 +388,9 @@ stream = ExtResource("5_7cjix")
 volume_db = -17.332
 bus = &"SFX"
 
+[connection signal="child_entered_tree" from="MarginContainer" to="." method="_on_margin_container_child_entered_tree"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/buttons_vbox/next_stage" to="." method="_on_next_stage_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/buttons_vbox/try_again" to="." method="_on_try_again_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/buttons_vbox/exit_menu" to="." method="_on_exit_menu_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="new_item_container/VBoxContainer/continue" to="." method="_on_continue_pressed"]

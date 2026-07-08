@@ -4,10 +4,14 @@ extends Area2D
 @onready var right_arrow: RayCast2D = $right_arrow
 @onready var left_arrow: RayCast2D = $left_arrow
 var attacking = false
-var direction = 1
+@export var direction: int
 var previous_direction: int
 var damage = 2
 var speed = 100
+
+func _ready() -> void:
+	if direction == 0:
+		direction = 1
 
 func _process(delta: float) -> void:
 	if has_overlapping_bodies():

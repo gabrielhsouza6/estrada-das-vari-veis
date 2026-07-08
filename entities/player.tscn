@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bi6diuv8pgwp7" path="res://scenes/pause_menu.tscn" id="4_qly61"]
 [ext_resource type="PackedScene" uid="uid://cjjtoin8r4y" path="res://gui_components/points_counter.tscn" id="4_rfe5m"]
 [ext_resource type="PackedScene" uid="uid://7i6scysnmwxr" path="res://scenes/end_stage_menu.tscn" id="5_qsoyl"]
+[ext_resource type="PackedScene" uid="uid://b740lrdrb7n6v" path="res://gui_components/logic_orb.tscn" id="6_x08pd"]
 [ext_resource type="AudioStream" uid="uid://wf37s28w70f" path="res://audio/characters/player/JDSherbert - Pixel Game Essentials SFX Pack - Footstep 1.mp3" id="7_tjdhl"]
 [ext_resource type="AudioStream" uid="uid://cd44l1i6q3aux" path="res://audio/characters/player/JDSherbert - Pixel Game Essentials SFX Pack - Jump 1.mp3" id="8_x08pd"]
 [ext_resource type="AudioStream" uid="uid://ci2aji8ixklkc" path="res://audio/characters/player/JDSherbert - Pixel Game Essentials SFX Pack - Die 1.mp3" id="9_dchgp"]
@@ -25,6 +26,17 @@ var defense = 1
 @onready var player_anim: AnimationPlayer = $player_anim
 
 func _ready() -> void:
+	match GameManager.current_stage.get(\"world\"):
+		1:
+			$CanvasLayer/Backpack.visible = true
+			$CanvasLayer/logic_orb.visible = false
+		2:
+			$CanvasLayer/Backpack.visible = false
+			$CanvasLayer/logic_orb.visible = true
+		3:
+			$CanvasLayer/Backpack.visible = false
+			$CanvasLayer/logic_orb.visible = false
+		
 	sprite.texture = load(\"res://Assets/character_assets/player/\" + GameManager.current_character.get(\"tag\") + \".png\")
 	for item in GameManager.selected_items:
 		match item.get(\"attribute\"):
@@ -38,6 +50,8 @@ func _ready() -> void:
 				max_health *= item.get(\"value\")
 				health = max_health
 				print(\"health increased\")
+			\"jump\":
+				JUMP_VELOCITY *= item.get(\"value\")
 
 func _physics_process(delta: float) -> void:
 	if health <= 0 and !dead:
@@ -445,6 +459,7 @@ shape = SubResource("CapsuleShape2D_merdl")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=733034658]
 
 [node name="Backpack" parent="CanvasLayer" unique_id=1172469523 instance=ExtResource("2_b0kkn")]
+visible = false
 z_index = 2
 
 [node name="health_bar" parent="CanvasLayer" unique_id=106951705 instance=ExtResource("3_e4p34")]
@@ -468,10 +483,14 @@ offset_bottom = 63.0
 [node name="end_stage_menu" parent="CanvasLayer" unique_id=1854757972 instance=ExtResource("5_qsoyl")]
 visible = false
 
+[node name="logic_orb" parent="CanvasLayer" unique_id=1733802214 instance=ExtResource("6_x08pd")]
+visible = false
+
 [node name="player_anim" type="AnimationPlayer" parent="." unique_id=1323448932]
 libraries/ = SubResource("AnimationLibrary_qly61")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1020186126]
+z_index = 3
 position = Vector2(0, -16)
 texture = ExtResource("1_merdl")
 hframes = 6

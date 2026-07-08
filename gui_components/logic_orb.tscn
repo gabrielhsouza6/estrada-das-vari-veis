@@ -1,0 +1,207 @@
+[gd_scene format=3 uid="uid://b740lrdrb7n6v"]
+
+[ext_resource type="Texture2D" uid="uid://et0ekrw7ilr4" path="res://Assets/gui_assets/orb/orb_1.png" id="1_m106j"]
+[ext_resource type="Script" uid="uid://1sgqf0sluss" path="res://scripts/logic_orb.gd" id="1_ou3yi"]
+[ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="2_ou3yi"]
+
+[sub_resource type="Animation" id="Animation_1fyp7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(20, 21)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.7, 0.7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(32, 34)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_j1mq4"]
+resource_name = "hide_orb"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(2.4622886, 1),
+"update": 0,
+"values": [Vector2(287, 160), Vector2(20, 21)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, 3), Vector2(0.7, 0.7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(569, 314), Vector2(32, 34)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_l78gl"]
+resource_name = "show_orb"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.45062527, 1),
+"update": 0,
+"values": [Vector2(20, 21), Vector2(287, 160)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.7, 0.7), Vector2(3, 3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(32, 34), Vector2(569, 314)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pravr"]
+_data = {
+&"RESET": SubResource("Animation_1fyp7"),
+&"hide_orb": SubResource("Animation_j1mq4"),
+&"show_orb": SubResource("Animation_l78gl")
+}
+
+[node name="logic_orb" type="Control" unique_id=1615659210]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ou3yi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1818399918]
+position = Vector2(20, 21)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_m106j")
+
+[node name="Button" type="Button" parent="." unique_id=897226034]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.014
+anchor_bottom = 0.025
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 36.0
+offset_bottom = 40.0
+focus_mode = 0
+
+[node name="Label" type="Label" parent="." unique_id=1555983997]
+visible = false
+layout_mode = 0
+offset_left = 252.0
+offset_top = 129.0
+offset_right = 332.0
+offset_bottom = 209.0
+theme_override_colors/font_shadow_color = Color(0.92156863, 0.92156863, 0.92156863, 0.34901962)
+theme_override_constants/shadow_outline_size = 14
+theme_override_fonts/font = ExtResource("2_ou3yi")
+theme_override_font_sizes/font_size = 80
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1611315018]
+libraries/ = SubResource("AnimationLibrary_pravr")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

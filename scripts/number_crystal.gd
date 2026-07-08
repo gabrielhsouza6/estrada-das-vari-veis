@@ -7,6 +7,7 @@ extends Area2D
 var disabled : bool
 
 func _ready() -> void:
+	load_data()
 	GameManager.connect("update_crystals", load_data)
 
 func _on_body_entered(body: Node2D) -> void:
