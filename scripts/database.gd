@@ -206,41 +206,6 @@ var stages = [
 		"tag": "stage_5_2",
 		"score": 0,
 		"finished": false
-	},
-	{
-		"id": 1,
-		"world": 3,
-		"tag": "stage_1_3",
-		"score": 0,
-		"finished": false
-	},
-	{
-		"id": 2,
-		"world": 3,
-		"tag": "stage_2_3",
-		"score": 0,
-		"finished": false
-	},
-	{
-		"id": 3,
-		"world": 3,
-		"tag": "stage_3_3",
-		"score": 0,
-		"finished": false
-	},
-	{
-		"id": 4,
-		"world": 3,
-		"tag": "stage_4_3",
-		"score": 0,
-		"finished": false
-	},
-	{
-		"id": 5,
-		"world": 3,
-		"tag": "stage_5_3",
-		"score": 0,
-		"finished": false
 	}
 ]
 

@@ -82,7 +82,6 @@ tab_alignment = 1
 current_tab = 0
 tab_0/title = "Prisao"
 tab_1/title = "Floresta"
-tab_2/title = "Castelo"
 
 [node name="1" type="TabBar" parent="TabContainer" unique_id=1973009081]
 layout_mode = 2
@@ -114,25 +113,6 @@ offset_right = 296.0
 offset_bottom = 151.0
 
 [node name="stage_list" type="HBoxContainer" parent="TabContainer/2/MarginContainer" unique_id=684779212]
-custom_minimum_size = Vector2(250, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 7
-alignment = 1
-
-[node name="3" type="TabBar" parent="TabContainer" unique_id=2145814598]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 2
-metadata/_tab_name = "Castelo"
-
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/3" unique_id=569280964]
-layout_mode = 0
-offset_right = 296.0
-offset_bottom = 151.0
-
-[node name="stage_list" type="HBoxContainer" parent="TabContainer/3/MarginContainer" unique_id=5852991]
 custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
 size_flags_horizontal = 4
