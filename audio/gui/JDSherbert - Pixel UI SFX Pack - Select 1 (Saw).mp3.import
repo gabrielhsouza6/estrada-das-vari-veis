@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dkbrx5wj8uc4g"
+path="res://.godot/imported/JDSherbert - Pixel UI SFX Pack - Select 1 (Saw).mp3-1d52de2f5911229aaf87c3c77f418485.mp3str"
+
+[deps]
+
+source_file="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Select 1 (Saw).mp3"
+dest_files=["res://.godot/imported/JDSherbert - Pixel UI SFX Pack - Select 1 (Saw).mp3-1d52de2f5911229aaf87c3c77f418485.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bi6diuv8pgwp7" path="res://scenes/pause_menu.tscn" id="4_qly61"]
 [ext_resource type="PackedScene" uid="uid://cjjtoin8r4y" path="res://gui_components/points_counter.tscn" id="4_rfe5m"]
 [ext_resource type="PackedScene" uid="uid://7i6scysnmwxr" path="res://scenes/end_stage_menu.tscn" id="5_qsoyl"]
+[ext_resource type="AudioStream" uid="uid://wf37s28w70f" path="res://audio/characters/player/JDSherbert - Pixel Game Essentials SFX Pack - Footstep 1.mp3" id="7_tjdhl"]
+[ext_resource type="AudioStream" uid="uid://cd44l1i6q3aux" path="res://audio/characters/player/JDSherbert - Pixel Game Essentials SFX Pack - Jump 1.mp3" id="8_x08pd"]
+[ext_resource type="AudioStream" uid="uid://ci2aji8ixklkc" path="res://audio/characters/player/JDSherbert - Pixel Game Essentials SFX Pack - Die 1.mp3" id="9_dchgp"]
+[ext_resource type="AudioStream" uid="uid://bd7pty3kopgo2" path="res://audio/characters/player/JDSherbert - Pixel Game Essentials SFX Pack - Damage 1.mp3" id="10_kdgjc"]
 
 [sub_resource type="GDScript" id="GDScript_b0kkn"]
 script/source = "extends CharacterBody2D
@@ -47,6 +51,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed(\"jump\") and is_on_floor() or dead:
 		velocity.y = JUMP_VELOCITY
+		$Audio/jump.play()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -60,7 +65,7 @@ func _physics_process(delta: float) -> void:
 	
 	if direction < 0:
 		sprite.flip_h = true
-	else:
+	elif direction > 0:
 		sprite.flip_h = false
 	
 	if !dead:
@@ -153,6 +158,42 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Audio/die:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Audio/hurt:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/walk:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_rfe5m"]
 resource_name = "dead"
@@ -181,11 +222,23 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Audio/die:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_qly61"]
 resource_name = "hurt"
-length = 0.5
-step = 0.166
+length = 0.375
+step = 0.13
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -205,7 +258,7 @@ tracks/1/path = NodePath("Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.166, 0.332),
+"times": PackedFloat32Array(0, 0.13, 0.26),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
@@ -217,10 +270,22 @@ tracks/2/path = NodePath(".:taking_damage")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.5),
+"times": PackedFloat32Array(0.375),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Audio/hurt:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_qsoyl"]
@@ -311,6 +376,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Audio/walk:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.375),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qly61"]
@@ -404,5 +481,28 @@ region_rect = Rect2(0, 127, 192, 32)
 [node name="death_stage_anim" type="AnimationPlayer" parent="." unique_id=1707645511]
 root_node = NodePath("../player_anim")
 libraries/ = SubResource("AnimationLibrary_tjdhl")
+
+[node name="Audio" type="Node" parent="." unique_id=731681275]
+
+[node name="walk" type="AudioStreamPlayer" parent="Audio" unique_id=251953204]
+stream = ExtResource("7_tjdhl")
+volume_db = -25.187
+bus = &"SFX"
+parameters/looping = false
+
+[node name="jump" type="AudioStreamPlayer" parent="Audio" unique_id=65554737]
+stream = ExtResource("8_x08pd")
+volume_db = -11.018
+bus = &"SFX"
+
+[node name="die" type="AudioStreamPlayer" parent="Audio" unique_id=1510604523]
+stream = ExtResource("9_dchgp")
+volume_db = -10.035
+bus = &"SFX"
+
+[node name="hurt" type="AudioStreamPlayer" parent="Audio" unique_id=1819629974]
+stream = ExtResource("10_kdgjc")
+volume_db = -10.947
+bus = &"SFX"
 
 [connection signal="animation_finished" from="death_stage_anim" to="." method="_on_animation_player_animation_finished"]

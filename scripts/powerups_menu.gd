@@ -46,9 +46,13 @@ func update_list() -> void:
 		new_style_box.corner_radius_top_right = 10
 		new_style_box.corner_detail = 20
 		new_button.add_theme_stylebox_override("normal", new_style_box)
+		new_button.mouse_entered.connect(_on_hover)
 		new_node.add_child(new_text_rect)
 		new_node.add_child(new_button)
 		new_node.set_script(load("res://scripts/store_power_panel.gd"))
 		new_node.data = power
 		grid_container.add_child(new_node)
+		
+func _on_hover() -> void:
+	$Audio/hover.play()
 		

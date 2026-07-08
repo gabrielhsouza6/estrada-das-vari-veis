@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cp8mkudg52hi4"]
 
 [ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="1_liyum"]
+[ext_resource type="Script" uid="uid://d2nb1nhnrjub3" path="res://scripts/volume_slider.gd" id="2_ijpji"]
 
 [node name="options" type="VBoxContainer" unique_id=142645188]
 theme_override_constants/separation = 14
@@ -32,6 +33,10 @@ text = "Musica"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+script = ExtResource("2_ijpji")
+bus_name = "Music"
 
 [node name="sfx" type="HBoxContainer" parent="." unique_id=872596182]
 custom_minimum_size = Vector2(135, 25)
@@ -51,6 +56,10 @@ text = "SFX"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+script = ExtResource("2_ijpji")
+bus_name = "SFX"
 
 [node name="fullscreen" type="HBoxContainer" parent="." unique_id=1102126497]
 custom_minimum_size = Vector2(135, 25)

@@ -49,7 +49,10 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		attacking = false
 		direction = previous_direction
 
+func _on_animated_sprite_2d_frame_changed() -> void:
+	if animated_sprite.animation == "attack" and animated_sprite.frame == 0:
+		attack()
+
 func _on_animated_sprite_2d_animation_changed() -> void:
 	if animated_sprite.animation == "attack":
 		previous_direction = direction
-		attack()

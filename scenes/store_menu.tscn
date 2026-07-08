@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://bxjcc5yy7s08e" path="res://Assets/gui_assets/Stone_UI_Sprite_Sheet.png" id="8_6kd0y"]
 [ext_resource type="Script" uid="uid://dvi1i5o36bqoo" path="res://scripts/power_exhibition_container.gd" id="8_7hek3"]
 [ext_resource type="Script" uid="uid://c1glj58u4xnb6" path="res://scripts/exit_button.gd" id="9_6kd0y"]
+[ext_resource type="AudioStream" uid="uid://c2u30gu7lwjsn" path="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Saw).mp3" id="10_upscj"]
+[ext_resource type="AudioStream" uid="uid://dkbrx5wj8uc4g" path="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Select 1 (Saw).mp3" id="11_7hek3"]
+[ext_resource type="AudioStream" uid="uid://dkqae6ffybyfm" path="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Error 1 (Saw).mp3" id="12_nl2ah"]
+[ext_resource type="AudioStream" uid="uid://3wvek2hj0r1m" path="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Popup Close 1 (Saw).mp3" id="13_nl2ah"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xa5r"]
 content_margin_left = 0.0
@@ -168,6 +172,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(80, -29)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/not_enough_points:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_xhdga"]
 resource_name = "not_enough_points"
@@ -183,6 +199,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(80, -29), Vector2(95, -29), Vector2(70, -29), Vector2(80, -29)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/not_enough_points:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_phhkb"]
@@ -395,6 +423,28 @@ vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1129151679]
 libraries/ = SubResource("AnimationLibrary_phhkb")
+
+[node name="Audio" type="Node" parent="." unique_id=642456905]
+
+[node name="hover" type="AudioStreamPlayer" parent="Audio" unique_id=869293231]
+stream = ExtResource("10_upscj")
+volume_db = -18.245
+bus = &"SFX"
+
+[node name="buy" type="AudioStreamPlayer" parent="Audio" unique_id=1875549529]
+stream = ExtResource("11_7hek3")
+volume_db = -9.122
+bus = &"SFX"
+
+[node name="not_enough_points" type="AudioStreamPlayer" parent="Audio" unique_id=1055262381]
+stream = ExtResource("12_nl2ah")
+volume_db = -9.122
+bus = &"SFX"
+
+[node name="exit" type="AudioStreamPlayer" parent="Audio" unique_id=209492534]
+stream = ExtResource("13_nl2ah")
+volume_db = -18.245
+bus = &"SFX"
 
 [connection signal="pressed" from="TabContainer/Characters/HBoxContainer/ExhibitionContainer/Button" to="TabContainer/Characters/HBoxContainer/ExhibitionContainer" method="_on_button_pressed"]
 [connection signal="change_exhib" from="TabContainer/Characters/HBoxContainer/ScrollContainer/GridContainer" to="TabContainer/Characters/HBoxContainer/ExhibitionContainer" method="_on_grid_container_change_exhib"]

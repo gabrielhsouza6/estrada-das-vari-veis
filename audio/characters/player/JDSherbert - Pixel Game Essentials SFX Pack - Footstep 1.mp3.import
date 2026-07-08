@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wf37s28w70f"
+path="res://.godot/imported/JDSherbert - Pixel Game Essentials SFX Pack - Footstep 1.mp3-91a6a07b3a20c864b9198925b944da9d.mp3str"
+
+[deps]
+
+source_file="res://audio/characters/player/JDSherbert - Pixel Game Essentials SFX Pack - Footstep 1.mp3"
+dest_files=["res://.godot/imported/JDSherbert - Pixel Game Essentials SFX Pack - Footstep 1.mp3-91a6a07b3a20c864b9198925b944da9d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

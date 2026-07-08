@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dnjbulof1kjft" path="res://scenes/powerups_menu.tscn" id="6_wbyn4"]
 [ext_resource type="PackedScene" uid="uid://cp8mkudg52hi4" path="res://scenes/options_menu.tscn" id="7_ofrqx"]
 [ext_resource type="Script" uid="uid://cw4svqt1crdmg" path="res://scripts/options_menu.gd" id="8_pw2k5"]
+[ext_resource type="AudioStream" uid="uid://xbqmwv6tqqwm" path="res://audio/musica-menu.mp3" id="10_pw2k5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sb6w7"]
 texture = ExtResource("1_vfskp")
@@ -440,6 +441,13 @@ zoom = Vector2(1.5, 1.5)
 position = Vector2(812, 223)
 number = 5
 color = "blue"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1293695277]
+stream = ExtResource("10_pw2k5")
+volume_db = -19.158
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [connection signal="on_jogar" from="CanvasLayer/MainMenu" to="CanvasLayer/stage_selection_menu" method="_on_main_menu_on_jogar"]
 [connection signal="on_loja" from="CanvasLayer/MainMenu" to="CanvasLayer/store_menu" method="_on_loja_pressed"]

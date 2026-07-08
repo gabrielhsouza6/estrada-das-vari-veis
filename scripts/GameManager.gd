@@ -2,6 +2,7 @@ extends Node
 
 signal took_damage(damage: int, max_health: int, current_health: int)
 signal crystal_collected(number: int)
+signal update_crystals
 signal character_bought
 signal powerup_bought
 signal character_changed
@@ -14,8 +15,9 @@ var current_character: Dictionary = Database.characters[7]
 var current_stage: Dictionary
 var selected_items = []
 
+var button_audio: AudioStreamPlayer
+
 func _ready() -> void:
-	#load_data()
 	pass
 
 func player_took_damage(damage: int, max_health: int, current_health: int):
@@ -28,6 +30,9 @@ func reset_stage_status() -> void:
 func crystal_collected_emit(number: int) -> void:
 	crystal_collected.emit(number)
 	stage_points += number * 100
+	
+func update_crystal_data() -> void:
+	update_crystals.emit()
 	
 func bought_character() -> void:
 	#save_data()
@@ -73,5 +78,4 @@ func load_data() -> void:
 		GameManager.current_character = file.get_var()
 		GameManager.total_points = file.get_var()
 		file.close()
-
-	
+		

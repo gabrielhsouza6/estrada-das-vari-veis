@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://c1t0jmohhxxky" path="res://scripts/pause_menu.gd" id="1_myx47"]
 [ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="1_n87rw"]
 [ext_resource type="PackedScene" uid="uid://cp8mkudg52hi4" path="res://scenes/options_menu.tscn" id="3_kukqi"]
+[ext_resource type="AudioStream" uid="uid://c2u30gu7lwjsn" path="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Saw).mp3" id="4_7l7mv"]
+[ext_resource type="AudioStream" uid="uid://c0mhunta0se0c" path="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Popup Open 1 (Saw).mp3" id="5_v4r4p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myx47"]
 content_margin_left = 0.0
@@ -158,6 +160,18 @@ text = "Sair para Menu"
 [node name="options" parent="PanelContainer" unique_id=142645188 instance=ExtResource("3_kukqi")]
 visible = false
 layout_mode = 2
+
+[node name="button_audio" type="Node" parent="." unique_id=246532191]
+
+[node name="hover" type="AudioStreamPlayer" parent="button_audio" unique_id=1628938621]
+stream = ExtResource("4_7l7mv")
+volume_db = -18.245
+bus = &"SFX"
+
+[node name="click" type="AudioStreamPlayer" parent="button_audio" unique_id=2064820978]
+stream = ExtResource("5_v4r4p")
+volume_db = -17.332
+bus = &"SFX"
 
 [connection signal="pressed" from="PanelContainer/pause/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/pause/restart" to="." method="_on_restart_pressed"]

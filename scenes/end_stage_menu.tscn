@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://de88mo6r1po31" path="res://scripts/end_stage_menu.gd" id="1_84ub4"]
 [ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="2_wftpo"]
+[ext_resource type="AudioStream" uid="uid://btger30ow2erp" path="res://audio/stage/JDSherbert - Pixel Game Essentials SFX Pack - Level Complete 1.mp3" id="3_wftpo"]
+[ext_resource type="AudioStream" uid="uid://c2u30gu7lwjsn" path="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Saw).mp3" id="4_af8ji"]
+[ext_resource type="AudioStream" uid="uid://c0mhunta0se0c" path="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Popup Open 1 (Saw).mp3" id="5_7cjix"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dapar"]
 content_margin_left = 0.0
@@ -65,6 +68,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(198, 310)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_uti8i"]
 resource_name = "show_menu"
@@ -79,6 +94,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(0.3186402, 0.3415098),
 "update": 0,
 "values": [Vector2(198, 310), Vector2(198, 12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oci20"]
@@ -220,6 +247,23 @@ libraries/ = SubResource("AnimationLibrary_oci20")
 
 [node name="Timer" type="Timer" parent="." unique_id=685079944]
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=838846405]
+stream = ExtResource("3_wftpo")
+volume_db = -22.829
+bus = &"Music"
+
+[node name="button_audio" type="Node" parent="." unique_id=1381272155]
+
+[node name="hover" type="AudioStreamPlayer" parent="button_audio" unique_id=275398204]
+stream = ExtResource("4_af8ji")
+volume_db = -18.245
+bus = &"SFX"
+
+[node name="click" type="AudioStreamPlayer" parent="button_audio" unique_id=1091400253]
+stream = ExtResource("5_7cjix")
+volume_db = -17.332
+bus = &"SFX"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/buttons_vbox/next_stage" to="." method="_on_next_stage_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/buttons_vbox/try_again" to="." method="_on_try_again_pressed"]

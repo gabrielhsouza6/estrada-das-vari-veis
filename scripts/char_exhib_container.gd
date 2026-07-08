@@ -4,7 +4,7 @@ var data: Dictionary
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	$Button.mouse_entered.connect(_on_hover.bind($Button))
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -27,6 +27,7 @@ func _on_button_pressed() -> void:
 		Database.player_characters.append(data)
 		$Button.text = "SOLD"
 		$Button.disabled = true
+		$"../../../../Audio/buy".play()
 		GameManager.total_points -= data.get("price")
 		GameManager.bought_character()
 	else:
@@ -34,3 +35,7 @@ func _on_button_pressed() -> void:
 
 func _on_grid_container_change_exhib(data: Dictionary) -> void:
 	change_character_exhibition(data)
+	
+func _on_hover(button: Button) -> void:
+	if !button.disabled:
+		$"../../../../Audio/hover".play()

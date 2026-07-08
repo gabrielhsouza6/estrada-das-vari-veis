@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://l0gnd2oxnmom" path="res://scripts/exhib_grid.gd" id="4_hlrt2"]
 [ext_resource type="Texture2D" uid="uid://bxjcc5yy7s08e" path="res://Assets/gui_assets/Stone_UI_Sprite_Sheet.png" id="5_k6ctp"]
 [ext_resource type="Script" uid="uid://c1glj58u4xnb6" path="res://scripts/exit_button.gd" id="6_n8ove"]
+[ext_resource type="AudioStream" uid="uid://c2u30gu7lwjsn" path="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Saw).mp3" id="7_hlrt2"]
+[ext_resource type="AudioStream" uid="uid://qpgmwvefjccl" path="res://audio/gui/JDSherbert - Pixel Game Essentials SFX Pack - Powerup 1.mp3" id="8_k6ctp"]
+[ext_resource type="AudioStream" uid="uid://3wvek2hj0r1m" path="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Popup Close 1 (Saw).mp3" id="9_k6ctp"]
 
 [sub_resource type="Animation" id="Animation_0px8s"]
 length = 0.001
@@ -206,6 +209,23 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_eolw6")
 icon = SubResource("AtlasTexture_6jfct")
 icon_alignment = 1
 script = ExtResource("6_n8ove")
+
+[node name="Audio" type="Node" parent="." unique_id=1832067287]
+
+[node name="hover" type="AudioStreamPlayer" parent="Audio" unique_id=315021576]
+stream = ExtResource("7_hlrt2")
+volume_db = -18.245
+bus = &"SFX"
+
+[node name="activate" type="AudioStreamPlayer" parent="Audio" unique_id=1524788794]
+stream = ExtResource("8_k6ctp")
+volume_db = -9.122
+bus = &"SFX"
+
+[node name="exit" type="AudioStreamPlayer" parent="Audio" unique_id=1472614748]
+stream = ExtResource("9_k6ctp")
+volume_db = -18.245
+bus = &"SFX"
 
 [connection signal="pressed" from="PanelContainer/HBoxContainer/ExhibitionContainer/Button" to="PanelContainer/HBoxContainer/ExhibitionContainer" method="_on_button_pressed"]
 [connection signal="change_exhib" from="PanelContainer/HBoxContainer/ScrollContainer/GridContainer" to="PanelContainer/HBoxContainer/ExhibitionContainer" method="_on_grid_container_change_exhib"]

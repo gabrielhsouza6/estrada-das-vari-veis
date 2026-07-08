@@ -142,7 +142,7 @@ var stages = [
 		"world": 1,
 		"tag": "stage_1_1",
 		"score": 0,
-		"finished": false
+		"finished": true
 	},
 	{
 		"id": 2,

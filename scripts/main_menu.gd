@@ -6,6 +6,10 @@ signal on_personagens
 signal on_powerups
 signal on_opcoes
 
+@onready var characters_button: Button = $characters_button
+@onready var power_button: Button = $power_button
+
+
 const GAME_SCENE := "res://scenes/stage_selection_menu.tscn"
 const FONT_PATH := "res://fonts/Minecraft.ttf"
 const PLAYER_PATH := "res://Assets/character_assets/player/MiniWorker.png"
@@ -35,32 +39,37 @@ func create_menu() -> void:
 
 	var jogar := create_button("Jogar")
 	jogar.pressed.connect(_on_jogar_pressed)
+	jogar.mouse_entered.connect(_on_hover)
+	jogar.pressed.connect(_on_click)
 	menu.add_child(jogar)
 	
 	var loja := create_button("Loja")
 	loja.pressed.connect(_on_loja_pressed)
+	loja.mouse_entered.connect(_on_hover)
+	loja.pressed.connect(_on_click)
 	menu.add_child(loja)
 	
 	var opcoes:= create_button("Opcoes")
 	opcoes.pressed.connect(_on_opcoes_pressed)
+	opcoes.mouse_entered.connect(_on_hover)
+	opcoes.pressed.connect(_on_click)
 	menu.add_child(opcoes)
 	
 
 	var sair := create_button("Sair")
 	sair.pressed.connect(_on_sair_pressed)
+	sair.mouse_entered.connect(_on_hover)
+	sair.pressed.connect(_on_click)
 	menu.add_child(sair)
 	
 	update_character()
+	
+	
+	characters_button.mouse_entered.connect(_on_hover)
+	characters_button.pressed.connect(_on_click)
+	power_button.mouse_entered.connect(_on_hover)
+	power_button.pressed.connect(_on_click)
 
-	## Lado esquerdo - personagem acima do texto
-	#add_character(Vector2(105, 188))
-	#add_shadow_text("Personagens", Vector2(28, 232), Vector2(160, 30), 17)
-##
-	### Lado direito - power-up acima do texto
-	#add_power_icon(Vector2(438, 185))
-	#add_shadow_text("Power-ups", Vector2(388, 232), Vector2(160, 30), 17)
-
-	jogar.grab_focus()
 
 func add_shadow_text(texto: String, pos: Vector2, size: Vector2, font_size: int) -> void:
 	var shadow := Label.new()
@@ -93,41 +102,13 @@ func create_button(texto: String) -> Button:
 	b.add_theme_font_override("font", pixel_font)
 	b.add_theme_font_size_override("font_size", 17)
 	return b
-
-#func add_character(pos: Vector2) -> void:
-	#var texture := load(PLAYER_PATH)
-	#if texture == null:
-		#return
-#
-	#var sprite := Sprite2D.new()
-	#sprite.texture = texture
-	#sprite.position = pos
-	#sprite.scale = Vector2(2.5, 2.5)
-	#sprite.region_enabled = true
-	#sprite.region_rect = Rect2(0, 0, 16, 16)
-	#add_child(sprite)
-#
-#func add_power_icon(pos: Vector2) -> void:
-	#var shadow := Label.new()
-	#shadow.text = "⚡"
-	#shadow.position = pos + Vector2(3, 3)
-	#shadow.size = Vector2(60, 60)
-	#shadow.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	#shadow.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	#shadow.add_theme_color_override("font_color", Color.BLACK)
-	#shadow.add_theme_font_size_override("font_size", 42)
-	#add_child(shadow)
-#
-	#var icon := Label.new()
-	#icon.text = "⚡"
-	#icon.position = pos
-	#icon.size = Vector2(60, 60)
-	#icon.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	#icon.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	#icon.add_theme_color_override("font_color", Color.YELLOW)
-	#icon.add_theme_font_size_override("font_size", 42)
-	#add_child(icon)
 	
+func _on_click() -> void:
+	$Audio/click.play()
+
+func _on_hover() -> void:
+	$Audio/hover.play()
+
 func update_character() -> void:
 	$character_sprite.texture = load("res://Assets/character_assets/player/" + GameManager.current_character.get("tag") + ".png")
 

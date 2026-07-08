@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://bxnt7fwybh0oo" path="res://Assets/crystals/Red/red_crystal_0002.png" id="20_mastr"]
 [ext_resource type="Texture2D" uid="uid://83drpqnr60yv" path="res://Assets/crystals/Red/red_crystal_0003.png" id="21_v5x2r"]
 [ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="22_5dtda"]
+[ext_resource type="AudioStream" uid="uid://cseo2gkvs45iv" path="res://audio/stage/JDSherbert - Pixel Game Essentials SFX Pack - Coin 2.mp3" id="23_cmr17"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_patwx"]
 atlas = ExtResource("2_cmr17")
@@ -221,5 +222,11 @@ text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=679389174]
+stream = ExtResource("23_cmr17")
+volume_db = -10.036
+bus = &"SFX"
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

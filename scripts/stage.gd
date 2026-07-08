@@ -4,13 +4,17 @@ extends Node
 @onready var right_sign: Area2D = $Signs/right_sign
 @onready var left_door: Area2D = $Doors/left_door
 @onready var right_door: Area2D = $Doors/right_door
+@onready var crystals: Node = $Crystals
+
 var text1: String
 var text2: String
 var operators = ['<', '=', '>']
+var colors = ["blue", "red", "green", "pink", "purple"]
 
 func _ready() -> void:
 	GameManager.connect("crystal_collected", update_end_stage)
-
+	load_crystal_data()
+	
 func update_end_stage(last_number: int) -> void:
 	var p = randi_range(0, 1)  ## Porta correta
 	var op1 = operators[randi_range(0, 2)] ## Operador 1
@@ -55,7 +59,13 @@ func update_end_stage(last_number: int) -> void:
 	right_sign.set_text(text2)
 
 func num_maior(num: int) -> int:
-	return randi_range(num+1, 10)
+	return randi_range(num+1, 11)
 	
 func num_menor(num: int) -> int:
 	return randi_range(-1, num-1)
+	
+func load_crystal_data() -> void:
+	for crystal in crystals.get_children():
+		crystal.number = randi_range(1, 10)
+		crystal.color = colors[randi_range(0, 4)]
+	GameManager.update_crystal_data()

@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bxjcc5yy7s08e" path="res://Assets/gui_assets/Stone_UI_Sprite_Sheet.png" id="2_sqff4"]
 [ext_resource type="Script" uid="uid://c1glj58u4xnb6" path="res://scripts/exit_button.gd" id="4_6ergh"]
 [ext_resource type="PackedScene" uid="uid://bhoumxvwo8cdy" path="res://scenes/stage_panel.tscn" id="4_i2sjr"]
+[ext_resource type="AudioStream" uid="uid://c2u30gu7lwjsn" path="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Saw).mp3" id="6_5f2co"]
+[ext_resource type="AudioStream" uid="uid://3wvek2hj0r1m" path="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Popup Close 1 (Saw).mp3" id="7_g2cul"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ergh"]
 
@@ -162,6 +164,18 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_5f2co")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_api74")
 theme_override_styles/hover = SubResource("StyleBoxFlat_i2sjr")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_6ergh")
+
+[node name="Audio" type="Node" parent="." unique_id=745228606]
+
+[node name="hover" type="AudioStreamPlayer" parent="Audio" unique_id=599594985]
+stream = ExtResource("6_5f2co")
+volume_db = -18.245
+bus = &"SFX"
+
+[node name="exit" type="AudioStreamPlayer" parent="Audio" unique_id=14143082]
+stream = ExtResource("7_g2cul")
+volume_db = -18.245
+bus = &"SFX"
 
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 

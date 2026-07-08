@@ -5,7 +5,10 @@
 [ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="2_oa7fa"]
 [ext_resource type="Script" uid="uid://l0gnd2oxnmom" path="res://scripts/exhib_grid.gd" id="3_jnhs4"]
 [ext_resource type="Script" uid="uid://c1glj58u4xnb6" path="res://scripts/exit_button.gd" id="6_oa7fa"]
+[ext_resource type="AudioStream" uid="uid://c2u30gu7lwjsn" path="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Saw).mp3" id="7_0arrr"]
 [ext_resource type="Texture2D" uid="uid://bxjcc5yy7s08e" path="res://Assets/gui_assets/Stone_UI_Sprite_Sheet.png" id="7_jnhs4"]
+[ext_resource type="AudioStream" uid="uid://qpgmwvefjccl" path="res://audio/gui/JDSherbert - Pixel Game Essentials SFX Pack - Powerup 1.mp3" id="8_0arrr"]
+[ext_resource type="AudioStream" uid="uid://3wvek2hj0r1m" path="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Popup Close 1 (Saw).mp3" id="9_i0eny"]
 
 [sub_resource type="Animation" id="Animation_sx2kr"]
 length = 0.001
@@ -197,6 +200,23 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_xr80s")
 icon = SubResource("AtlasTexture_0i4xx")
 icon_alignment = 1
 script = ExtResource("6_oa7fa")
+
+[node name="Audio" type="Node" parent="." unique_id=690001530]
+
+[node name="hover" type="AudioStreamPlayer" parent="Audio" unique_id=618079123]
+stream = ExtResource("7_0arrr")
+volume_db = -18.245
+bus = &"SFX"
+
+[node name="change" type="AudioStreamPlayer" parent="Audio" unique_id=862349619]
+stream = ExtResource("8_0arrr")
+volume_db = -9.122
+bus = &"SFX"
+
+[node name="exit" type="AudioStreamPlayer" parent="Audio" unique_id=332512720]
+stream = ExtResource("9_i0eny")
+volume_db = -18.245
+bus = &"SFX"
 
 [connection signal="pressed" from="PanelContainer/HBoxContainer/ExhibitionContainer/Button" to="PanelContainer/HBoxContainer/ExhibitionContainer" method="_on_button_pressed"]
 [connection signal="change_exhib" from="PanelContainer/HBoxContainer/ScrollContainer/GridContainer" to="PanelContainer/HBoxContainer/ExhibitionContainer" method="_on_grid_container_change_exhib"]

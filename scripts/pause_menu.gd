@@ -13,6 +13,7 @@ signal exit_to_menu
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	voltar_pause.pressed.connect(_on_voltar_pause_pressed)
+	load_audio()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -32,8 +33,8 @@ func _on_resume_pressed() -> void:
 
 func _on_restart_pressed() -> void:
 	get_tree().paused = false
-	get_tree().reload_current_scene()
 	GameManager.reset_stage_status()
+	get_tree().reload_current_scene()
 	restart_stage.emit()
 
 func _on_options_pressed() -> void:
@@ -56,3 +57,15 @@ func _on_fullscreen_button_toggled(toggled_on: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+func load_audio() -> void:
+	for child in pause.get_children():
+		if child.get_class() == "Button":
+			child.mouse_entered.connect(_on_hover)
+			child.pressed.connect(_on_click)
+
+func _on_hover() -> void:
+	$button_audio/hover.play()
+
+func _on_click() -> void:
+	$button_audio/click.play()
