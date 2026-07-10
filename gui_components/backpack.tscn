@@ -203,6 +203,19 @@ _data = {
 &"open_backpack": SubResource("Animation_dtk3y")
 }
 
+[sub_resource type="GDScript" id="GDScript_3l7hs"]
+script/source = "extends AnimationPlayer
+
+
+# Called when the node enters the scene tree for the first time.
+
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	speed_scale = 1 / Engine.time_scale
+"
+
 [node name="Backpack" type="Control" unique_id=1172469523]
 layout_mode = 3
 anchors_preset = 15
@@ -219,6 +232,7 @@ texture = ExtResource("2_3l7hs")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=751265985]
 libraries/ = SubResource("AnimationLibrary_7882q")
+script = SubResource("GDScript_3l7hs")
 
 [node name="Button" type="Button" parent="." unique_id=1568447388]
 modulate = Color(1, 1, 1, 0)

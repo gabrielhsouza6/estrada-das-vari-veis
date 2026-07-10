@@ -1,0 +1,952 @@
+[gd_scene format=4 uid="uid://dmfd83qj4578l"]
+
+[ext_resource type="Texture2D" uid="uid://71xem2pa6xbg" path="res://Assets/stage_assets/Forest Tile Set.png" id="1_d2geh"]
+[ext_resource type="Texture2D" uid="uid://chqne83sekoj7" path="res://Assets/stage_assets/sky_background/1.png" id="2_v5l4c"]
+[ext_resource type="Texture2D" uid="uid://drsm8tjjtnn3u" path="res://Assets/stage_assets/sky_background/2.png" id="3_lxjjs"]
+[ext_resource type="Texture2D" uid="uid://fcf6nye424tl" path="res://Assets/stage_assets/sky_background/3.png" id="4_35mt5"]
+[ext_resource type="Texture2D" uid="uid://c2nngl0g5dvfo" path="res://Assets/character_assets/player/MiniVillagerMan.png" id="5_qfljt"]
+[ext_resource type="FontFile" uid="uid://ca3hk3gfmiwx1" path="res://fonts/Minecraft.ttf" id="6_35mt5"]
+[ext_resource type="AudioStream" uid="uid://c2u30gu7lwjsn" path="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Saw).mp3" id="6_lxjjs"]
+[ext_resource type="AudioStream" uid="uid://c0mhunta0se0c" path="res://audio/gui/JDSherbert - Pixel UI SFX Pack - Popup Open 1 (Saw).mp3" id="7_35mt5"]
+[ext_resource type="AudioStream" uid="uid://cx07est7r8rsf" path="res://audio/No Destination - Pix (youtube).mp3" id="9_qfljt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a517k"]
+texture = ExtResource("1_d2geh")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+24:0/0 = 0
+25:0/0 = 0
+26:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+22:1/0 = 0
+23:1/0 = 0
+24:1/0 = 0
+25:1/0 = 0
+26:1/0 = 0
+27:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+8:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+24:2/0 = 0
+25:2/0 = 0
+26:2/0 = 0
+27:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+8:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+1:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+22:5/0 = 0
+1:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+20:6/0 = 0
+21:6/0 = 0
+22:6/0 = 0
+23:6/0 = 0
+24:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+20:7/0 = 0
+21:7/0 = 0
+22:7/0 = 0
+23:7/0 = 0
+24:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+21:8/0 = 0
+27:8/0 = 0
+28:8/0 = 0
+29:8/0 = 0
+30:8/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+27:9/0 = 0
+28:9/0 = 0
+29:9/0 = 0
+30:9/0 = 0
+31:9/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+22:10/0 = 0
+23:10/0 = 0
+24:10/0 = 0
+27:10/0 = 0
+28:10/0 = 0
+29:10/0 = 0
+30:10/0 = 0
+31:10/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+18:11/0 = 0
+19:11/0 = 0
+20:11/0 = 0
+22:11/0 = 0
+23:11/0 = 0
+24:11/0 = 0
+27:11/0 = 0
+28:11/0 = 0
+29:11/0 = 0
+30:11/0 = 0
+31:11/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+16:12/0 = 0
+17:12/0 = 0
+18:12/0 = 0
+19:12/0 = 0
+20:12/0 = 0
+22:12/0 = 0
+23:12/0 = 0
+24:12/0 = 0
+27:12/0 = 0
+28:12/0 = 0
+29:12/0 = 0
+30:12/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+16:13/0 = 0
+17:13/0 = 0
+18:13/0 = 0
+19:13/0 = 0
+20:13/0 = 0
+22:13/0 = 0
+23:13/0 = 0
+24:13/0 = 0
+29:13/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+14:14/0 = 0
+15:14/0 = 0
+16:14/0 = 0
+17:14/0 = 0
+18:14/0 = 0
+19:14/0 = 0
+20:14/0 = 0
+23:14/0 = 0
+24:14/0 = 0
+25:14/0 = 0
+26:14/0 = 0
+29:14/0 = 0
+30:14/0 = 0
+31:14/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+12:15/0 = 0
+13:15/0 = 0
+14:15/0 = 0
+15:15/0 = 0
+16:15/0 = 0
+17:15/0 = 0
+18:15/0 = 0
+19:15/0 = 0
+20:15/0 = 0
+23:15/0 = 0
+24:15/0 = 0
+25:15/0 = 0
+26:15/0 = 0
+29:15/0 = 0
+30:15/0 = 0
+31:15/0 = 0
+1:16/0 = 0
+2:16/0 = 0
+3:16/0 = 0
+4:16/0 = 0
+5:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+9:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+12:16/0 = 0
+13:16/0 = 0
+14:16/0 = 0
+15:16/0 = 0
+16:16/0 = 0
+17:16/0 = 0
+18:16/0 = 0
+19:16/0 = 0
+20:16/0 = 0
+22:16/0 = 0
+23:16/0 = 0
+24:16/0 = 0
+25:16/0 = 0
+26:16/0 = 0
+27:16/0 = 0
+29:16/0 = 0
+30:16/0 = 0
+31:16/0 = 0
+21:17/0 = 0
+22:17/0 = 0
+23:17/0 = 0
+24:17/0 = 0
+25:17/0 = 0
+26:17/0 = 0
+27:17/0 = 0
+28:17/0 = 0
+29:17/0 = 0
+30:17/0 = 0
+31:17/0 = 0
+0:18/0 = 0
+1:18/0 = 0
+2:18/0 = 0
+3:18/0 = 0
+4:18/0 = 0
+19:18/0 = 0
+20:18/0 = 0
+23:18/0 = 0
+24:18/0 = 0
+25:18/0 = 0
+26:18/0 = 0
+27:18/0 = 0
+28:18/0 = 0
+29:18/0 = 0
+14:19/0 = 0
+19:19/0 = 0
+20:19/0 = 0
+21:19/0 = 0
+22:19/0 = 0
+23:19/0 = 0
+24:19/0 = 0
+25:19/0 = 0
+26:19/0 = 0
+27:19/0 = 0
+28:19/0 = 0
+29:19/0 = 0
+13:20/0 = 0
+14:20/0 = 0
+15:20/0 = 0
+18:20/0 = 0
+19:20/0 = 0
+20:20/0 = 0
+22:20/0 = 0
+26:20/0 = 0
+27:20/0 = 0
+28:20/0 = 0
+12:21/0 = 0
+13:21/0 = 0
+14:21/0 = 0
+15:21/0 = 0
+16:21/0 = 0
+19:21/0 = 0
+20:21/0 = 0
+22:21/0 = 0
+23:21/0 = 0
+24:21/0 = 0
+25:21/0 = 0
+26:21/0 = 0
+1:22/0 = 0
+2:22/0 = 0
+3:22/0 = 0
+4:22/0 = 0
+5:22/0 = 0
+6:22/0 = 0
+7:22/0 = 0
+8:22/0 = 0
+9:22/0 = 0
+12:22/0 = 0
+13:22/0 = 0
+14:22/0 = 0
+15:22/0 = 0
+16:22/0 = 0
+18:22/0 = 0
+19:22/0 = 0
+20:22/0 = 0
+22:22/0 = 0
+23:22/0 = 0
+24:22/0 = 0
+25:22/0 = 0
+26:22/0 = 0
+27:22/0 = 0
+28:22/0 = 0
+29:22/0 = 0
+1:23/0 = 0
+2:23/0 = 0
+3:23/0 = 0
+4:23/0 = 0
+5:23/0 = 0
+6:23/0 = 0
+7:23/0 = 0
+8:23/0 = 0
+9:23/0 = 0
+13:23/0 = 0
+14:23/0 = 0
+15:23/0 = 0
+19:23/0 = 0
+20:23/0 = 0
+21:23/0 = 0
+23:23/0 = 0
+24:23/0 = 0
+25:23/0 = 0
+26:23/0 = 0
+27:23/0 = 0
+29:23/0 = 0
+3:24/0 = 0
+4:24/0 = 0
+5:24/0 = 0
+6:24/0 = 0
+7:24/0 = 0
+13:24/0 = 0
+14:24/0 = 0
+22:24/0 = 0
+23:24/0 = 0
+24:24/0 = 0
+25:24/0 = 0
+26:24/0 = 0
+27:24/0 = 0
+3:25/0 = 0
+4:25/0 = 0
+5:25/0 = 0
+6:25/0 = 0
+13:25/0 = 0
+14:25/0 = 0
+20:25/0 = 0
+21:25/0 = 0
+22:25/0 = 0
+23:25/0 = 0
+24:25/0 = 0
+25:25/0 = 0
+26:25/0 = 0
+27:25/0 = 0
+28:25/0 = 0
+29:25/0 = 0
+20:26/0 = 0
+21:26/0 = 0
+0:27/0 = 0
+1:27/0 = 0
+13:27/0 = 0
+14:27/0 = 0
+15:27/0 = 0
+20:27/0 = 0
+21:27/0 = 0
+26:27/0 = 0
+27:27/0 = 0
+28:27/0 = 0
+0:28/0 = 0
+1:28/0 = 0
+2:28/0 = 0
+3:28/0 = 0
+4:28/0 = 0
+5:28/0 = 0
+6:28/0 = 0
+7:28/0 = 0
+8:28/0 = 0
+9:28/0 = 0
+10:28/0 = 0
+13:28/0 = 0
+14:28/0 = 0
+15:28/0 = 0
+16:28/0 = 0
+17:28/0 = 0
+18:28/0 = 0
+19:28/0 = 0
+20:28/0 = 0
+21:28/0 = 0
+22:28/0 = 0
+23:28/0 = 0
+24:28/0 = 0
+25:28/0 = 0
+26:28/0 = 0
+27:28/0 = 0
+28:28/0 = 0
+1:29/0 = 0
+2:29/0 = 0
+3:29/0 = 0
+4:29/0 = 0
+5:29/0 = 0
+6:29/0 = 0
+7:29/0 = 0
+8:29/0 = 0
+9:29/0 = 0
+10:29/0 = 0
+11:29/0 = 0
+13:29/0 = 0
+14:29/0 = 0
+18:29/0 = 0
+19:29/0 = 0
+20:29/0 = 0
+21:29/0 = 0
+22:29/0 = 0
+23:29/0 = 0
+27:29/0 = 0
+28:29/0 = 0
+1:30/0 = 0
+2:30/0 = 0
+3:30/0 = 0
+4:30/0 = 0
+5:30/0 = 0
+6:30/0 = 0
+7:30/0 = 0
+8:30/0 = 0
+9:30/0 = 0
+10:30/0 = 0
+11:30/0 = 0
+18:30/0 = 0
+19:30/0 = 0
+20:30/0 = 0
+21:30/0 = 0
+22:30/0 = 0
+23:30/0 = 0
+0:31/0 = 0
+1:31/0 = 0
+2:31/0 = 0
+3:31/0 = 0
+4:31/0 = 0
+5:31/0 = 0
+6:31/0 = 0
+7:31/0 = 0
+8:31/0 = 0
+9:31/0 = 0
+10:31/0 = 0
+11:31/0 = 0
+12:31/0 = 0
+18:31/0 = 0
+19:31/0 = 0
+20:31/0 = 0
+21:31/0 = 0
+22:31/0 = 0
+23:31/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m1245"]
+texture = ExtResource("2_v5l4c")
+0:0/size_in_atlas = Vector2i(36, 20)
+0:0/0 = 0
+0:0/0/z_index = -7
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2wy6a"]
+texture = ExtResource("3_lxjjs")
+0:0/size_in_atlas = Vector2i(36, 20)
+0:0/0 = 0
+0:0/0/z_index = -1
+
+[sub_resource type="TileSet" id="TileSet_2vahm"]
+sources/0 = SubResource("TileSetAtlasSource_a517k")
+sources/1 = SubResource("TileSetAtlasSource_m1245")
+sources/2 = SubResource("TileSetAtlasSource_2wy6a")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_30dym"]
+texture = ExtResource("4_35mt5")
+0:0/size_in_atlas = Vector2i(36, 20)
+0:0/0 = 0
+0:0/0/z_index = -1
+
+[sub_resource type="TileSet" id="TileSet_rxhon"]
+sources/0 = SubResource("TileSetAtlasSource_30dym")
+
+[sub_resource type="GDScript" id="GDScript_vselb"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	texture = load(\"res://Assets/character_assets/player/\" + GameManager.current_character.get(\"tag\") + \".png\")
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="Animation" id="Animation_p2wpq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_bgg7o"]
+resource_name = "idle"
+length = 0.6666667
+loop_mode = 1
+step = 0.18
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36, 0.54),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pekqw"]
+_data = {
+&"RESET": SubResource("Animation_p2wpq"),
+&"idle": SubResource("Animation_bgg7o")
+}
+
+[sub_resource type="Animation" id="Animation_g0ee0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("clouds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasModulate:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(18.892157, 18.892157, 18.892157, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Audio/music:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/CanvasModulate:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_o6l4e"]
+resource_name = "default"
+length = 999.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("clouds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-2000, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasModulate:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5.0311675),
+"transitions": PackedFloat32Array(0.12074219, 1),
+"update": 0,
+"values": [Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Audio/music:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.2629218),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/CanvasModulate:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3.2390873, 8.048641),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g33fq"]
+_data = {
+&"RESET": SubResource("Animation_g0ee0"),
+&"default": SubResource("Animation_o6l4e")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfljt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.2901961)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1245"]
+content_margin_left = 8.0
+content_margin_top = 7.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.4392157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wy6a"]
+content_margin_left = 8.0
+content_margin_top = 7.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.78039217)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a517k"]
+content_margin_left = 8.0
+content_margin_top = 7.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.28627452)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[sub_resource type="GDScript" id="GDScript_qfljt"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func _on_pressed() -> void:
+	$\"../../../../Audio/click\".play()
+	GameManager.total_points += 50000
+	get_tree().change_scene_to_file(\"res://scenes/main_menu_scene.tscn\")
+
+func _on_mouse_entered() -> void:
+	$\"../../../../Audio/hover\".play()
+"
+
+[node name="end_game_scene" type="Node2D" unique_id=649849244]
+
+[node name="foreground" type="TileMapLayer" parent="." unique_id=2138723300]
+tile_map_data = PackedByteArray("AAAEABkAAAAFABYAAAAFABkAAAAGABYAAAAGABkAAAAEABYAAAAHABkAAAAFABYAAAAIABkAAAAGABYAAAAJABkAAAAIABYAACAKABkAAAAJABYAACADABgAAAAFABYAACAEABgAAAAGABYAACAFABgAAAAEABYAACAGABgAAAAFABYAACAHABgAAAAGABYAACAIABgAAAAIABYAACAJABgAAAAJABYAACABABkAAAAFABYAAAACABkAAAAGABYAAAADABkAAAAEABYAAAAAABkAAAAEABYAAAAAABgAAAAFABYAACABABgAAAAGABYAACACABgAAAAEABYAACD//xgAAAAEABYAACAIABcAAAAbABgAAAAHABcAAAAaABgAAAAGABcAAAAIABcAACAFABcAAAAaABgAAAAEABcAAAAIABcAACADABcAAAAaABgAAAACABcAAAAaABgAAAABABcAAAAaABgAAAAAABcAAAAIABcAACD//xcAAAAaABgAAAAQABMAAQAAAAAAAAAMABUAAgAAAAAAAAAaABMAAgAAAAAAAAAMAA8AAgAAAAAAAAAlABAAAgAAAAAAAAA=")
+tile_set = SubResource("TileSet_2vahm")
+
+[node name="clouds" type="TileMapLayer" parent="." unique_id=37098283]
+tile_map_data = PackedByteArray("AAAVABgAAAAAAAAAAAAHABoAAAAAAAAAAAAhABoAAAAAAAAAAAAtABUAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_rxhon")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1295816922]
+position = Vector2(140, 369)
+texture = ExtResource("5_qfljt")
+hframes = 6
+region_enabled = true
+region_rect = Rect2(0, 0, 192, 32)
+script = SubResource("GDScript_vselb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=635912832]
+libraries/ = SubResource("AnimationLibrary_pekqw")
+autoplay = &"idle"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=1924120048]
+libraries/ = SubResource("AnimationLibrary_g33fq")
+autoplay = &"default"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=232744344]
+position = Vector2(228, 313)
+zoom = Vector2(1.8, 1.8)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=832815146]
+color = Color(18.892157, 18.892157, 18.892157, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1762715121]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=686034215]
+offset_left = 391.0
+offset_top = 43.0
+offset_right = 538.0
+offset_bottom = 266.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/MarginContainer" unique_id=2011136614]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qfljt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1662883122]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 11
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1705598295]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_35mt5")
+theme_override_font_sizes/font_size = 24
+text = "Parabens!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1209637391]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_35mt5")
+theme_override_font_sizes/font_size = 12
+text = "Voce conquistou a logica e chegou ao topo"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=2099743883]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_35mt5")
+theme_override_font_sizes/font_size = 12
+text = "Tente jogar as fases novamente e consiga mais pontos
+
+Obrigado por jogar"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1250030669]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_35mt5")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_m1245")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2wy6a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a517k")
+text = "Voltar para Menu"
+script = SubResource("GDScript_qfljt")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer" unique_id=1160532185]
+color = Color(1, 1, 1, 0)
+
+[node name="Audio" type="Node" parent="." unique_id=1276280999]
+
+[node name="hover" type="AudioStreamPlayer" parent="Audio" unique_id=2145205918]
+stream = ExtResource("6_lxjjs")
+volume_db = -18.245
+bus = &"SFX"
+
+[node name="click" type="AudioStreamPlayer" parent="Audio" unique_id=449819580]
+stream = ExtResource("7_35mt5")
+volume_db = -17.332
+bus = &"SFX"
+
+[node name="music" type="AudioStreamPlayer" parent="Audio" unique_id=194222905]
+stream = ExtResource("9_qfljt")
+bus = &"Music"
+parameters/looping = true
+
+[connection signal="mouse_entered" from="CanvasLayer/MarginContainer/VBoxContainer/Button" to="CanvasLayer/MarginContainer/VBoxContainer/Button" method="_on_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Button" to="CanvasLayer/MarginContainer/VBoxContainer/Button" method="_on_pressed"]

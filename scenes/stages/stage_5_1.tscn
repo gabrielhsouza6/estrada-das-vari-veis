@@ -1016,6 +1016,7 @@ var disabled : bool = false
 func _on_body_entered(body: Node2D) -> void:
 	if !disabled:
 		GameManager.gained_item()
+		GameManager.finished_stage()
 		$AudioStreamPlayer.play()
 		visible = false
 		disabled = true

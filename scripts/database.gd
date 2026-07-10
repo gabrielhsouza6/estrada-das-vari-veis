@@ -9,17 +9,17 @@ var characters = [
 	{
 		"name": "Noble Woman",
 		"tag": "MiniNobleWoman",
-		"price": 15000
+		"price": 20000
 	},
 	{
 		"name": "Old Man",
 		"tag": "MiniOldMan",
-		"price": 10000
+		"price": 5000
 	},
 	{
 		"name": "Old Woman",
 		"tag": "MiniOldWoman",
-		"price": 10000
+		"price": 5000
 	},
 	{
 		"name": "Peasent",
@@ -29,7 +29,7 @@ var characters = [
 	{
 		"name": "Princess",
 		"tag": "MiniPrincess",
-		"price": 20000
+		"price": 25000
 	},
 	{
 		"name": "Queen",
@@ -49,7 +49,7 @@ var characters = [
 	{
 		"name": "Worker",
 		"tag": "MiniWorker",
-		"price": 1000
+		"price": 10000
 	}
 ]
 
@@ -95,16 +95,6 @@ var powers = [
 		"value": 1.25
 	},
 	{
-		"name": "Castle Key",
-		"price": 50000,
-		"description": "It unlocks Castle Stages!",
-		"texture": AtlasTexture,
-		"x": 1,
-		"y": 2,
-		"attribute": "defense",
-		"value": 1
-	},
-	{
 		"name": "Strong Heart",
 		"price": 10000,
 		"description": "It increases your health!",
@@ -142,56 +132,56 @@ var stages = [
 		"world": 1,
 		"tag": "stage_1_1",
 		"score": 0,
-		"finished": true
+		"finished": false
 	},
 	{
 		"id": 2,
 		"world": 1,
 		"tag": "stage_2_1",
 		"score": 0,
-		"finished": true
+		"finished": false
 	},
 	{
 		"id": 3,
 		"world": 1,
 		"tag": "stage_3_1",
 		"score": 0,
-		"finished": true
+		"finished": false
 	},
 	{
 		"id": 4,
 		"world": 1,
 		"tag": "stage_4_1",
 		"score": 0,
-		"finished": true
+		"finished": false
 	},
 	{
 		"id": 5,
 		"world": 1,
 		"tag": "stage_5_1",
 		"score": 0,
-		"finished": true
+		"finished": false
 	},
 	{
 		"id": 1,
 		"world": 2,
 		"tag": "stage_1_2",
 		"score": 0,
-		"finished": true
+		"finished": false
 	},
 	{
 		"id": 2,
 		"world": 2,
 		"tag": "stage_2_2",
 		"score": 0,
-		"finished": true
+		"finished": false
 	},
 	{
 		"id": 3,
 		"world": 2,
 		"tag": "stage_3_2",
 		"score": 0,
-		"finished": true
+		"finished": false
 	},
 	{
 		"id": 4,

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blnyx21knhird"
+path="res://.godot/imported/8Bit Boss Chiptune - Boss Theme - Sawsquarenoise · Free Copyright-Safe Music - Audial Tones (youtube).mp3-8f6ed83a926ac8550f989648326253ac.mp3str"
+
+[deps]
+
+source_file="res://audio/stage/8Bit Boss Chiptune - Boss Theme - Sawsquarenoise · Free Copyright-Safe Music - Audial Tones (youtube).mp3"
+dest_files=["res://.godot/imported/8Bit Boss Chiptune - Boss Theme - Sawsquarenoise · Free Copyright-Safe Music - Audial Tones (youtube).mp3-8f6ed83a926ac8550f989648326253ac.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

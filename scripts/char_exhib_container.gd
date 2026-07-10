@@ -6,6 +6,7 @@ var data: Dictionary
 func _ready() -> void:
 	$Button.mouse_entered.connect(_on_hover.bind($Button))
 	
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

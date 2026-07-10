@@ -52,6 +52,8 @@ func _ready() -> void:
 				print(\"health increased\")
 			\"jump\":
 				JUMP_VELOCITY *= item.get(\"value\")
+			\"score\":
+				GameManager.score_multiplier = item.get(\"value\")
 
 func _physics_process(delta: float) -> void:
 	if health <= 0 and !dead:

@@ -28,7 +28,7 @@ func _on_next_stage_pressed() -> void:
 		next_stage_id = 1
 		next_stage_world = current_stage_world + 1
 	else:
-		next_stage_id = current_stage_world + 1
+		next_stage_id = current_stage_id + 1
 		next_stage_world = current_stage_world
 	GameManager.reset_stage_status()
 	GameManager.current_stage = GameManager.get_stage(next_stage_id, next_stage_world)

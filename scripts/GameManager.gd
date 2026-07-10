@@ -10,8 +10,9 @@ signal stage_finished
 signal item_gained
 
 var save_path = "user://user_data.save"
-var total_points: int = 75000
+var total_points: int = 0
 var stage_points: int = 0
+var score_multiplier = 1
 var current_character: Dictionary = Database.characters[7]
 var current_stage: Dictionary
 var selected_items = []
@@ -19,7 +20,7 @@ var selected_items = []
 var button_audio: AudioStreamPlayer
 
 func _ready() -> void:
-	pass
+	load_data()
 
 func player_took_damage(damage: int, max_health: int, current_health: int):
 	took_damage.emit(damage, max_health, current_health)
@@ -30,7 +31,7 @@ func reset_stage_status() -> void:
 	
 func crystal_collected_emit(number: int) -> void:
 	crystal_collected.emit(number)
-	stage_points += number * 100
+	stage_points += number * 100 * score_multiplier
 	
 func update_crystal_data() -> void:
 	update_crystals.emit()
@@ -39,21 +40,21 @@ func gained_item() -> void:
 	item_gained.emit()
 	
 func bought_character() -> void:
-	#save_data()
+	save_data()
 	character_bought.emit()
 	
 func bought_powerup() -> void:
-	#save_data()
+	save_data()
 	powerup_bought.emit()
 	
 func changed_character() -> void:
-	#save_data()
+	save_data()
 	character_changed.emit()
 	
 func finished_stage() -> void:
 	stage_finished.emit()
 	update_stage_data()
-	#save_data()
+	save_data()
 	
 func update_stage_data() -> void:
 	for stage in Database.stages:

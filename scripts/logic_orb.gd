@@ -19,6 +19,6 @@ func update_label(number: int) -> void:
 	if number == 10:
 		$Label.text = "V"
 		$Sprite2D.texture = blue_texture
-	else:
+	elif number == 0:
 		$Label.text = "F"
 		$Sprite2D.texture = red_texture

@@ -15,3 +15,4 @@ func _on_button_pressed() -> void:
 	
 func update_label(number: int) -> void:
 	$Label.text = str(number)
+	

@@ -166,6 +166,15 @@ _data = {
 &"show_orb": SubResource("Animation_l78gl")
 }
 
+[sub_resource type="GDScript" id="GDScript_ou3yi"]
+script/source = "extends AnimationPlayer
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	speed_scale = 1 / Engine.time_scale
+"
+
 [node name="logic_orb" type="Control" unique_id=1615659210]
 layout_mode = 3
 anchors_preset = 0
@@ -203,5 +212,6 @@ horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1611315018]
 libraries/ = SubResource("AnimationLibrary_pravr")
+script = SubResource("GDScript_ou3yi")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
