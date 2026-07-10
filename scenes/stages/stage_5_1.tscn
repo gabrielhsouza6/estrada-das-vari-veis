@@ -1131,121 +1131,72 @@ position = Vector2(1065, 325)
 
 [node name="Enemies" type="Node" parent="." unique_id=1983842586]
 
-[node name="skeleton" parent="Enemies" unique_id=655861035 instance=ExtResource("6_vb6xm")]
-position = Vector2(384, 358)
-direction = 1
-
-[node name="skeleton2" parent="Enemies" unique_id=511082926 instance=ExtResource("6_vb6xm")]
-position = Vector2(725, 358)
-direction = -1
-
 [node name="ghost" parent="Enemies" unique_id=369886268 instance=ExtResource("7_mrxfr")]
-position = Vector2(558.00006, 339)
-direction = 1
-
-[node name="ghost2" parent="Enemies" unique_id=1608955699 instance=ExtResource("7_mrxfr")]
-position = Vector2(725, 316)
-direction = 1
-
-[node name="ghost3" parent="Enemies" unique_id=209771310 instance=ExtResource("7_mrxfr")]
-position = Vector2(385, 320)
+position = Vector2(712, 324)
 direction = -1
 
-[node name="ghost4" parent="Enemies" unique_id=511786836 instance=ExtResource("7_mrxfr")]
-position = Vector2(911, 324)
-direction = 1
-
-[node name="ghost5" parent="Enemies" unique_id=1999091005 instance=ExtResource("7_mrxfr")]
-position = Vector2(1027.0001, 304.00003)
+[node name="ghost2" parent="Enemies" unique_id=1471418388 instance=ExtResource("7_mrxfr")]
+position = Vector2(393, 325)
 direction = -1
 
-[node name="ghost6" parent="Enemies" unique_id=1434598809 instance=ExtResource("7_mrxfr")]
-position = Vector2(798, 307)
-direction = 1
-
-[node name="skeleton3" parent="Enemies" unique_id=247515355 instance=ExtResource("6_vb6xm")]
-position = Vector2(1102, 374)
+[node name="skeleton" parent="Enemies" unique_id=655861035 instance=ExtResource("6_vb6xm")]
+position = Vector2(396, 358)
 direction = -1
 
-[node name="skeleton4" parent="Enemies" unique_id=645648736 instance=ExtResource("6_vb6xm")]
-position = Vector2(1636, 374)
+[node name="skeleton2" parent="Enemies" unique_id=1094971433 instance=ExtResource("6_vb6xm")]
+position = Vector2(709, 358)
 direction = 1
 
-[node name="skeleton5" parent="Enemies" unique_id=1276563316 instance=ExtResource("6_vb6xm")]
-position = Vector2(1171, 374)
-direction = 1
-
-[node name="skeleton6" parent="Enemies" unique_id=64291251 instance=ExtResource("6_vb6xm")]
-position = Vector2(1328, 374)
+[node name="skeleton3" parent="Enemies" unique_id=303792193 instance=ExtResource("6_vb6xm")]
+position = Vector2(558, 358)
 direction = -1
 
-[node name="skeleton7" parent="Enemies" unique_id=1871897149 instance=ExtResource("6_vb6xm")]
-position = Vector2(1509, 374)
+[node name="ghost3" parent="Enemies" unique_id=181604143 instance=ExtResource("7_mrxfr")]
+position = Vector2(909, 322.00003)
 direction = -1
 
-[node name="skeleton8" parent="Enemies" unique_id=935990846 instance=ExtResource("6_vb6xm")]
-position = Vector2(1408, 373)
-direction = 1
+[node name="ghost4" parent="Enemies" unique_id=55224524 instance=ExtResource("7_mrxfr")]
+position = Vector2(1009, 298)
 
-[node name="ghost7" parent="Enemies" unique_id=1102756033 instance=ExtResource("7_mrxfr")]
-position = Vector2(1111, 352)
-direction = 1
+[node name="ghost5" parent="Enemies" unique_id=1264039531 instance=ExtResource("7_mrxfr")]
+position = Vector2(815, 301)
 
-[node name="ghost8" parent="Enemies" unique_id=325206216 instance=ExtResource("7_mrxfr")]
-position = Vector2(1243, 353)
+[node name="ghost6" parent="Enemies" unique_id=1077954643 instance=ExtResource("7_mrxfr")]
+position = Vector2(1122, 344)
+
+[node name="ghost7" parent="Enemies" unique_id=1202304045 instance=ExtResource("7_mrxfr")]
+position = Vector2(1241, 344)
 direction = -1
 
-[node name="ghost9" parent="Enemies" unique_id=1801773544 instance=ExtResource("7_mrxfr")]
-position = Vector2(1429, 352)
+[node name="ghost8" parent="Enemies" unique_id=1866091866 instance=ExtResource("7_mrxfr")]
+position = Vector2(1460, 344)
+
+[node name="ghost9" parent="Enemies" unique_id=1449270475 instance=ExtResource("7_mrxfr")]
+position = Vector2(1614, 345)
 direction = -1
 
-[node name="ghost10" parent="Enemies" unique_id=1683426097 instance=ExtResource("7_mrxfr")]
-position = Vector2(1581, 352)
-direction = 1
+[node name="skeleton4" parent="Enemies" unique_id=1827748982 instance=ExtResource("6_vb6xm")]
+position = Vector2(1108, 374)
+
+[node name="skeleton5" parent="Enemies" unique_id=1547512567 instance=ExtResource("6_vb6xm")]
+position = Vector2(1263, 374)
+
+[node name="skeleton6" parent="Enemies" unique_id=665324163 instance=ExtResource("6_vb6xm")]
+position = Vector2(1182, 373)
+direction = -1
+
+[node name="skeleton7" parent="Enemies" unique_id=1369475178 instance=ExtResource("6_vb6xm")]
+position = Vector2(1386, 374)
+direction = -1
+
+[node name="skeleton8" parent="Enemies" unique_id=1146430352 instance=ExtResource("6_vb6xm")]
+position = Vector2(1627, 374)
+direction = -1
+
+[node name="skeleton9" parent="Enemies" unique_id=750201925 instance=ExtResource("6_vb6xm")]
+position = Vector2(1503, 374)
 
 [node name="Barriers" type="Node" parent="." unique_id=792643866]
-
-[node name="Barrier" parent="Barriers" unique_id=1820441329 instance=ExtResource("8_h8s0p")]
-position = Vector2(1649, 372)
-
-[node name="Barrier2" parent="Barriers" unique_id=1062506982 instance=ExtResource("8_h8s0p")]
-position = Vector2(1649, 350)
-
-[node name="Barrier3" parent="Barriers" unique_id=1398194697 instance=ExtResource("8_h8s0p")]
-position = Vector2(1087, 372)
-
-[node name="Barrier4" parent="Barriers" unique_id=1505873676 instance=ExtResource("8_h8s0p")]
-position = Vector2(1087, 350)
-
-[node name="Barrier5" parent="Barriers" unique_id=442773893 instance=ExtResource("8_h8s0p")]
-position = Vector2(1041, 325)
-
-[node name="Barrier6" parent="Barriers" unique_id=165515909 instance=ExtResource("8_h8s0p")]
-position = Vector2(1041, 302)
-
-[node name="Barrier7" parent="Barriers" unique_id=1284430038 instance=ExtResource("8_h8s0p")]
-position = Vector2(783, 325)
-
-[node name="Barrier8" parent="Barriers" unique_id=1863167822 instance=ExtResource("8_h8s0p")]
-position = Vector2(783, 303)
-
-[node name="Barrier9" parent="Barriers" unique_id=1968828202 instance=ExtResource("8_h8s0p")]
-position = Vector2(737, 316)
-
-[node name="Barrier13" parent="Barriers" unique_id=735930437 instance=ExtResource("8_h8s0p")]
-position = Vector2(737, 335)
-
-[node name="Barrier10" parent="Barriers" unique_id=503940150 instance=ExtResource("8_h8s0p")]
-position = Vector2(737, 357)
-
-[node name="Barrier11" parent="Barriers" unique_id=236110969 instance=ExtResource("8_h8s0p")]
-position = Vector2(367, 356)
-
-[node name="Barrier12" parent="Barriers" unique_id=1184308787 instance=ExtResource("8_h8s0p")]
-position = Vector2(367, 317)
-
-[node name="Barrier14" parent="Barriers" unique_id=555158504 instance=ExtResource("8_h8s0p")]
-position = Vector2(367, 335)
 
 [node name="Crystals" type="Node" parent="." unique_id=109063930]
 
@@ -1344,5 +1295,41 @@ stream = ExtResource("13_v1daw")
 volume_db = -16.421
 autoplay = true
 bus = &"Music"
+
+[node name="Barrier" parent="." unique_id=1820441329 instance=ExtResource("8_h8s0p")]
+position = Vector2(1646, 373)
+
+[node name="Barrier2" parent="." unique_id=581028732 instance=ExtResource("8_h8s0p")]
+position = Vector2(1646, 344)
+
+[node name="Barrier3" parent="." unique_id=401122281 instance=ExtResource("8_h8s0p")]
+position = Vector2(1089, 373)
+
+[node name="Barrier4" parent="." unique_id=2114917383 instance=ExtResource("8_h8s0p")]
+position = Vector2(1090, 344)
+
+[node name="Barrier5" parent="." unique_id=1712452789 instance=ExtResource("8_h8s0p")]
+position = Vector2(1041, 324)
+
+[node name="Barrier6" parent="." unique_id=138404748 instance=ExtResource("8_h8s0p")]
+position = Vector2(1041, 301)
+
+[node name="Barrier7" parent="." unique_id=532637065 instance=ExtResource("8_h8s0p")]
+position = Vector2(783, 325)
+
+[node name="Barrier8" parent="." unique_id=51186924 instance=ExtResource("8_h8s0p")]
+position = Vector2(783, 302)
+
+[node name="Barrier9" parent="." unique_id=1582820823 instance=ExtResource("8_h8s0p")]
+position = Vector2(735, 357)
+
+[node name="Barrier10" parent="." unique_id=784705525 instance=ExtResource("8_h8s0p")]
+position = Vector2(735, 326)
+
+[node name="Barrier11" parent="." unique_id=729511169 instance=ExtResource("8_h8s0p")]
+position = Vector2(370, 356)
+
+[node name="Barrier12" parent="." unique_id=651149731 instance=ExtResource("8_h8s0p")]
+position = Vector2(370, 324)
 
 [connection signal="body_entered" from="orb" to="orb" method="_on_body_entered"]
