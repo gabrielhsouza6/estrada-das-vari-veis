@@ -16,6 +16,7 @@
 script/source = "extends CharacterBody2D
 
 var dead = false
+var was_on_floor: bool
 @export var taking_damage = false
 var max_health:int = 10
 var health:int = max_health
@@ -24,6 +25,7 @@ var defense = 1
 @export var JUMP_VELOCITY = -300.0
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var player_anim: AnimationPlayer = $player_anim
+@onready var coyote_timer: Timer = $coyote_timer
 
 func _ready() -> void:
 	match GameManager.current_stage.get(\"world\"):
@@ -65,7 +67,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	# Handle jump.
-	if Input.is_action_just_pressed(\"jump\") and is_on_floor() or dead:
+	if Input.is_action_just_pressed(\"jump\") and (is_on_floor() or !coyote_timer.is_stopped()) or dead:
 		velocity.y = JUMP_VELOCITY
 		$Audio/jump.play()
 
@@ -95,8 +97,11 @@ func _physics_process(delta: float) -> void:
 					player_anim.play(\"idle\")
 			else:
 				player_anim.play(\"jump\")
-
+	
+	was_on_floor = is_on_floor()
 	move_and_slide()
+	if !is_on_floor() and was_on_floor:
+		coyote_timer.start()
 	
 func take_damage(damage: int) -> void:
 	health -= damage * (1 - (defense - 1))
@@ -525,5 +530,9 @@ bus = &"SFX"
 stream = ExtResource("10_kdgjc")
 volume_db = -10.947
 bus = &"SFX"
+
+[node name="coyote_timer" type="Timer" parent="." unique_id=1721052400]
+wait_time = 0.15
+one_shot = true
 
 [connection signal="animation_finished" from="death_stage_anim" to="." method="_on_animation_player_animation_finished"]
